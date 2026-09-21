@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>3D Artist Portfolio</title>
+<title>3D Artist Portfolio | Lunar Bloom</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,103 +14,27 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-
 /* REAL HOMEPAGE PROJECTS */
-.home-project{
-display:block;
-overflow:hidden;
-border-radius:17px;
-background:#fff;
-box-shadow:0 8px 25px rgba(70,50,60,.07);
-transition:transform .25s ease,box-shadow .25s ease
-}
-
-.home-project:hover{
-transform:translateY(-5px);
-box-shadow:0 14px 32px rgba(70,50,60,.12)
-}
-
-.home-project-image{
-position:relative;
-height:190px;
-overflow:hidden
-}
-
-.home-project-image img{
-width:100%;
-height:100%;
-display:block;
-object-fit:cover;
-object-position:center;
-transition:transform .45s ease,filter .45s ease
-}
-
-.home-project:hover .home-project-image img{
-transform:scale(1.045);
-filter:brightness(1.04)
-}
-
-.home-project-image:after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(180deg,transparent 60%,rgba(25,15,30,.16));
-pointer-events:none
-}
-
-.home-project-info{
-height:55px;
-padding:0 14px;
-display:flex;
-align-items:center;
-justify-content:space-between
-}
-
-.home-project-info h3{
-font-size:15px;
-color:#56545d
-}
-
-.home-project-arrow{
-width:31px;
-height:31px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:#fff0f4;
-color:#ff9db8;
-font-size:17px;
-transition:.2s
-}
-
-.home-project:hover .home-project-arrow{
-background:#ff9db8;
-color:#fff;
-transform:translateX(2px)
-}
+.home-project{display:block;overflow:hidden;border-radius:17px;background:#fff;box-shadow:0 8px 25px rgba(70,50,60,.07);transition:.25s}
+.home-project:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(70,50,60,.12)}
+.home-project-image{position:relative;height:190px;overflow:hidden}
+.home-project-image img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:.45s}
+.home-project:hover .home-project-image img{transform:scale(1.045);filter:brightness(1.04)}
+.home-project-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(25,15,30,.16));pointer-events:none}
+.home-project-info{height:55px;padding:0 14px;display:flex;align-items:center;justify-content:space-between}
+.home-project-info h3{font-size:15px;color:#56545d}
+.home-project-arrow{width:31px;height:31px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#fff0f4;color:#ff9db8;font-size:17px;transition:.2s}
+.home-project:hover .home-project-arrow{background:#ff9db8;color:#fff;transform:translateX(2px)}
 
 /* PROFILE PICTURE */
-.avatar{
-width:72px;
-height:72px;
-padding:3px;
-overflow:hidden;
-border:2px solid #ffd4de;
-border-radius:50%;
-background:#fff;
-box-shadow:0 6px 18px rgba(70,50,60,.07)
-}
+.avatar{width:72px;height:72px;padding:3px;overflow:hidden;border:2px solid #ffd4de;border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(70,50,60,.07)}
+.avatar img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;border-radius:50%}
 
-.avatar img{
-width:100%;
-height:100%;
-display:block;
-object-fit:cover;
-object-position:center;
-border-radius:50%
-}
+/* CLEANER SIDEBAR */
+.sidebar{padding-bottom:40px}
+.main-nav{margin-top:5px}
 
+/* RESPONSIVE */
 @media(max-width:850px){
 .home-project-image{height:240px}
 }
@@ -118,7 +42,6 @@ border-radius:50%
 @media(max-width:520px){
 .home-project-image{height:210px}
 }
-
 </style>
 
 </head>
@@ -172,53 +95,12 @@ AURA ROSA
 <span>Project Pages</span>
 </a>
 
-<!-- PRICES -->
 <a href="prices.html" class="nav-item">
 <span class="nav-icon">£</span>
 <span>Prices</span>
 </a>
 
-<button class="nav-item" id="settingsButton">
-<span class="nav-icon">⚙</span>
-<span>Settings</span>
-</button>
-
 </nav>
-
-
-<div class="sidebar-line"></div>
-
-
-<div class="account-nav">
-
-<button class="nav-item">
-<span class="nav-icon">●</span>
-<span>My Account</span>
-</button>
-
-<button class="nav-item">
-<span class="nav-icon">↪</span>
-<span>Sign Out</span>
-</button>
-
-</div>
-
-
-<div class="help">
-
-<span class="help-circle">
-?
-</span>
-
-<strong>
-Help
-</strong>
-
-<button>
-•••
-</button>
-
-</div>
 
 </aside>
 
@@ -296,7 +178,6 @@ About me
 
 <div class="fairy-wing wing-left"></div>
 <div class="fairy-wing wing-right"></div>
-
 
 <div class="cottage">
 
@@ -459,7 +340,7 @@ Overgrown Ruins
 
 
 
-<!-- ABOUT -->
+<!-- ABOUT + SKILLS -->
 <section class="information" id="about">
 
 <article class="information-card">
@@ -481,12 +362,7 @@ textures and immersive spaces.
 
 </div>
 
-<button class="card-options" aria-label="About options">
-•••
-</button>
-
 </article>
-
 
 
 <article class="information-card">
@@ -506,10 +382,6 @@ Blender · Modeling · Texturing · Roblox Studio
 </p>
 
 </div>
-
-<button class="card-options" aria-label="Skills options">
-•••
-</button>
 
 </article>
 
@@ -609,10 +481,6 @@ Models · Environments · Little Worlds
 
 </div>
 
-<button>
-•••
-</button>
-
 </div>
 
 </section>
@@ -660,7 +528,6 @@ Fantasy Countryside
 </a>
 
 
-
 <a href="crystal-caverns.html" class="side-project">
 
 <div class="side-image crystal-side">
@@ -686,7 +553,6 @@ Environment
 </a>
 
 
-
 <a href="overgrown-ruins.html" class="side-project">
 
 <div class="side-image ruins-side">
@@ -710,7 +576,6 @@ Environment
 </span>
 
 </a>
-
 
 
 <a href="fairy-props.html" class="side-project">
@@ -749,10 +614,6 @@ FAIRY PROPS
 <h2>
 Let's create together
 </h2>
-
-<button>
-•••
-</button>
 
 </div>
 
@@ -793,39 +654,9 @@ creative projects.
 </div>
 
 
-
-<!-- SETTINGS -->
-<div
-class="settings-overlay"
-id="settingsModal"
->
-
-<div class="settings-window">
-
-<button
-class="settings-close"
-id="closeSettings"
-aria-label="Close settings"
->
-×
-</button>
-
-<h2>
-Settings
-</h2>
-
-<p>
-Portfolio settings will appear here.
-</p>
-
-</div>
-
-</div>
-
-
 <script src="script.js"></script>
 
 </body>
 </html>
 
-<!-- ===== COMPLETE INDEX.HTML - END ===== -->
+<!-- ===== COMPLETE CLEAN INDEX.HTML - END ===== -->
