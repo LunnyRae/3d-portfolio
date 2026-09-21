@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>3D Artist Portfolio | Lunar Bloom</title>
 
@@ -14,27 +14,96 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* REAL HOMEPAGE PROJECTS */
+/* PROJECT CARDS */
 .home-project{display:block;overflow:hidden;border-radius:17px;background:#fff;box-shadow:0 8px 25px rgba(70,50,60,.07);transition:.25s}
 .home-project:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(70,50,60,.12)}
 .home-project-image{position:relative;height:190px;overflow:hidden}
-.home-project-image img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:.45s}
-.home-project:hover .home-project-image img{transform:scale(1.045);filter:brightness(1.04)}
-.home-project-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(25,15,30,.16));pointer-events:none}
+.home-project-image img{width:100%;height:100%;display:block;object-fit:cover;transition:.45s}
+.home-project:hover img{transform:scale(1.045);filter:brightness(1.04)}
+.home-project-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(25,15,30,.16))}
 .home-project-info{height:55px;padding:0 14px;display:flex;align-items:center;justify-content:space-between}
 .home-project-info h3{font-size:15px;color:#56545d}
-.home-project-arrow{width:31px;height:31px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#fff0f4;color:#ff9db8;font-size:17px;transition:.2s}
+.home-project-arrow{width:31px;height:31px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#fff0f4;color:#ff9db8;transition:.2s}
 .home-project:hover .home-project-arrow{background:#ff9db8;color:#fff;transform:translateX(2px)}
 
-/* PROFILE PICTURE */
-.avatar{width:72px;height:72px;padding:3px;overflow:hidden;border:2px solid #ffd4de;border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(70,50,60,.07)}
-.avatar img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;border-radius:50%}
+/* PROFILE */
+.avatar{width:72px;height:72px;padding:3px;overflow:hidden;border:2px solid #ffd4de;border-radius:50%;background:#fff}
+.avatar img{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%}
 
-/* CLEANER SIDEBAR */
+/* ABOUT CARD */
+.about-card{align-items:flex-start;transition:.35s ease}
+.about-card .information-icon{margin-top:7px}
+
+.about-card-content{
+flex:1;
+min-width:0
+}
+
+.about-short{
+margin-top:5px;
+color:#96939b;
+font-size:13px;
+line-height:1.5
+}
+
+.about-expanded{
+max-height:0;
+overflow:hidden;
+opacity:0;
+transition:max-height .45s ease,opacity .3s ease,margin .3s ease
+}
+
+.about-card.expanded .about-expanded{
+max-height:300px;
+margin-top:13px;
+opacity:1
+}
+
+.about-expanded p{
+margin:0 0 12px;
+color:#96939b;
+font-size:13px;
+line-height:1.65
+}
+
+.about-read-more{
+display:inline-flex;
+align-items:center;
+gap:5px;
+color:#e883a1;
+font-size:12px;
+font-weight:800
+}
+
+.about-read-more:hover{
+color:#cf6e8d
+}
+
+.about-toggle{
+flex:0 0 auto;
+margin:5px 0 0 10px;
+padding:5px 7px;
+border:0;
+background:none;
+color:#77737c;
+font-size:18px;
+cursor:pointer;
+transition:.2s
+}
+
+.about-toggle:hover{
+color:#ff9db8
+}
+
+.about-card.expanded .about-toggle{
+transform:rotate(90deg);
+color:#ff9db8
+}
+
+/* CLEAN SIDEBAR */
 .sidebar{padding-bottom:40px}
 .main-nav{margin-top:5px}
 
-/* RESPONSIVE */
 @media(max-width:850px){
 .home-project-image{height:240px}
 }
@@ -59,19 +128,10 @@
 <span class="brand-green">BLOOM</span>
 </div>
 
-
 <div class="current-project">
-
-<span class="current-icon">
-▦
-</span>
-
-<span>
-AURA ROSA
-</span>
-
+<span class="current-icon">▦</span>
+<span>AURA ROSA</span>
 </div>
-
 
 <nav class="main-nav">
 
@@ -80,7 +140,7 @@ AURA ROSA
 <span>Home</span>
 </a>
 
-<a href="#about" class="nav-item">
+<a href="about.html" class="nav-item">
 <span class="nav-icon">●</span>
 <span>About</span>
 </a>
@@ -105,12 +165,11 @@ AURA ROSA
 </aside>
 
 
-
 <!-- CENTER -->
 <main class="content" id="home">
 
 
-<!-- TOP BAR -->
+<!-- TOP -->
 <header class="topbar">
 
 <div class="search">
@@ -127,7 +186,6 @@ placeholder="Search Here"
 
 </div>
 
-
 <div class="top-actions">
 
 <button aria-label="Messages">
@@ -141,7 +199,6 @@ placeholder="Search Here"
 </div>
 
 </header>
-
 
 
 <!-- HERO -->
@@ -158,14 +215,13 @@ little worlds in 3D
 Environment artist &amp; 3D modeller
 </p>
 
-
 <div class="hero-actions">
 
 <a href="projects.html" class="primary-button">
 View my work
 </a>
 
-<a href="#about" class="secondary-button">
+<a href="about.html" class="secondary-button">
 About me
 </a>
 
@@ -196,7 +252,6 @@ About me
 
 </div>
 
-
 <span class="hero-flower flower-1">✿</span>
 <span class="hero-flower flower-2">✿</span>
 <span class="hero-flower flower-3">✿</span>
@@ -208,15 +263,11 @@ About me
 </section>
 
 
-<!-- HERO DOTS -->
 <div class="hero-dots">
-
 <button class="hero-dot active"></button>
 <button class="hero-dot"></button>
 <button class="hero-dot"></button>
-
 </div>
-
 
 
 <!-- SELECTED WORK -->
@@ -229,7 +280,7 @@ Selected Work
 </h2>
 
 <a href="projects.html">
-<button id="viewAllButton">
+<button>
 View All →
 </button>
 </a>
@@ -241,11 +292,7 @@ View All →
 
 
 <!-- AURA ROSA -->
-<a
-href="aura-rosa.html"
-class="home-project"
-data-project="aura rosa"
->
+<a href="aura-rosa.html" class="home-project" data-project="aura rosa">
 
 <div class="home-project-image">
 
@@ -271,13 +318,8 @@ Aura Rosa
 </a>
 
 
-
 <!-- CRYSTAL CAVERNS -->
-<a
-href="crystal-caverns.html"
-class="home-project"
-data-project="crystal caverns"
->
+<a href="crystal-caverns.html" class="home-project" data-project="crystal caverns">
 
 <div class="home-project-image">
 
@@ -303,13 +345,8 @@ Crystal Caverns
 </a>
 
 
-
 <!-- OVERGROWN RUINS -->
-<a
-href="overgrown-ruins.html"
-class="home-project"
-data-project="overgrown ruins"
->
+<a href="overgrown-ruins.html" class="home-project" data-project="overgrown ruins">
 
 <div class="home-project-image">
 
@@ -339,32 +376,61 @@ Overgrown Ruins
 </section>
 
 
-
 <!-- ABOUT + SKILLS -->
-<section class="information" id="about">
+<section class="information">
 
-<article class="information-card">
+
+<!-- EXPANDABLE ABOUT -->
+<article class="information-card about-card" id="aboutCard">
 
 <div class="information-icon">
 ●
 </div>
 
-<div class="information-copy">
+<div class="about-card-content">
 
 <h3>
 About me
 </h3>
 
-<p>
-I create detailed models,
-textures and immersive spaces.
+<p class="about-short">
+I create detailed models, environments and immersive game worlds.
 </p>
 
+
+<div class="about-expanded" id="aboutExpanded">
+
+<p>
+I've been working with 3D modelling for around two years,
+creating environments, buildings, props, maps and other
+game assets. I especially enjoy mid-to-low poly work where
+I have the creative freedom to experiment with different
+worlds and ideas while keeping the player's experience in mind.
+</p>
+
+<a href="about.html" class="about-read-more">
+Read full story →
+</a>
+
 </div>
+
+</div>
+
+
+<button
+class="about-toggle"
+id="aboutToggle"
+type="button"
+aria-label="Expand About Me"
+aria-expanded="false"
+>
+•••
+</button>
 
 </article>
 
 
+<!-- SKILLS -->
 <article class="information-card">
 
 <div class="information-icon cube">
@@ -412,7 +478,6 @@ Lunivé Rosebloom
 
 </div>
 
-
 <div class="avatar">
 
 <img
@@ -451,20 +516,16 @@ aria-label="Instagram"
 #COLORS
 </strong>
 
-
 <div class="palette">
-
 <span class="palette-green"></span>
 <span class="palette-pink"></span>
 <span class="palette-cream"></span>
-
 </div>
 
 </section>
 
 
-
-<!-- ARTIST INFO -->
+<!-- ARTIST -->
 <section class="artist-info">
 
 <div class="panel-heading">
@@ -484,7 +545,6 @@ Models · Environments · Little Worlds
 </div>
 
 </section>
-
 
 
 <!-- PROJECT PAGES -->
@@ -510,20 +570,11 @@ View All
 </div>
 
 <div class="side-project-text">
-
-<strong>
-AURA ROSA
-</strong>
-
-<span>
-Fantasy Countryside
-</span>
-
+<strong>AURA ROSA</strong>
+<span>Fantasy Countryside</span>
 </div>
 
-<span class="side-arrow">
-›
-</span>
+<span class="side-arrow">›</span>
 
 </a>
 
@@ -535,20 +586,11 @@ Fantasy Countryside
 </div>
 
 <div class="side-project-text">
-
-<strong>
-CRYSTAL CAVERNS
-</strong>
-
-<span>
-Environment
-</span>
-
+<strong>CRYSTAL CAVERNS</strong>
+<span>Environment</span>
 </div>
 
-<span class="side-arrow">
-›
-</span>
+<span class="side-arrow">›</span>
 
 </a>
 
@@ -560,20 +602,11 @@ Environment
 </div>
 
 <div class="side-project-text">
-
-<strong>
-OVERGROWN RUINS
-</strong>
-
-<span>
-Environment
-</span>
-
+<strong>OVERGROWN RUINS</strong>
+<span>Environment</span>
 </div>
 
-<span class="side-arrow">
-›
-</span>
+<span class="side-arrow">›</span>
 
 </a>
 
@@ -585,25 +618,15 @@ Environment
 </div>
 
 <div class="side-project-text">
-
-<strong>
-FAIRY PROPS
-</strong>
-
-<span>
-3D Models
-</span>
-
+<strong>FAIRY PROPS</strong>
+<span>3D Models</span>
 </div>
 
-<span class="side-arrow">
-›
-</span>
+<span class="side-arrow">›</span>
 
 </a>
 
 </section>
-
 
 
 <!-- CONTACT -->
@@ -618,10 +641,7 @@ Let's create together
 </div>
 
 
-<a
-class="contact-box"
-href="contact.html"
->
+<a class="contact-box" href="contact.html">
 
 <div class="contact-icon">
 ✉
@@ -635,8 +655,7 @@ Get in touch
 
 <span>
 Open to freelance work,
-collaborations and
-creative projects.
+collaborations and creative projects.
 </span>
 
 </div>
@@ -656,7 +675,23 @@ creative projects.
 
 <script src="script.js"></script>
 
+<script>
+const aboutToggle = document.getElementById("aboutToggle");
+const aboutCard = document.getElementById("aboutCard");
+
+aboutToggle.addEventListener("click", () => {
+    const expanded = aboutCard.classList.toggle("expanded");
+
+    aboutToggle.setAttribute("aria-expanded", expanded);
+
+    aboutToggle.setAttribute(
+        "aria-label",
+        expanded ? "Collapse About Me" : "Expand About Me"
+    );
+});
+</script>
+
 </body>
 </html>
 
-<!-- ===== COMPLETE CLEAN INDEX.HTML - END ===== -->
+<!-- ===== COMPLETE INDEX.HTML - END ===== -->
