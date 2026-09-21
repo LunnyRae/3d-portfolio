@@ -27,6 +27,7 @@
 .work-hero{max-width:1250px;min-height:260px;margin:45px auto 55px;padding:48px;position:relative;overflow:hidden;border-radius:38px;background:linear-gradient(120deg,#ffc4d3,#ff9db8);color:#fff}
 .work-hero h1{position:relative;z-index:2;margin-bottom:12px;font-size:52px;font-weight:500;line-height:1.05}
 .work-hero p{position:relative;z-index:2;max-width:520px;font-size:17px;line-height:1.6}
+
 .hero-decoration{position:absolute;width:330px;height:330px;right:-40px;top:-60px;border:2px solid rgba(255,255,255,.35);border-radius:50%}
 .hero-decoration:before,.hero-decoration:after{content:"";position:absolute;border:2px solid rgba(255,255,255,.3);border-radius:50%}
 .hero-decoration:before{width:210px;height:210px;left:-80px;bottom:-30px}
@@ -34,6 +35,7 @@
 
 /* GALLERY */
 .work-content{max-width:1250px;margin:auto}
+
 .work-heading{margin-bottom:25px;display:flex;align-items:flex-end;justify-content:space-between}
 .work-heading h2{margin-bottom:5px;font-size:26px}
 .work-heading p{color:#99969e;font-size:14px}
@@ -68,29 +70,6 @@ background:linear-gradient(180deg,transparent 55%,rgba(25,15,30,.2));
 pointer-events:none
 }
 
-/* OVERGROWN RUINS PLACEHOLDER */
-.ruins{background:linear-gradient(135deg,#eee1c8,#c5d69d,#99af79)}
-
-.gallery-symbol{
-position:absolute;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-font-size:100px;
-color:rgba(255,255,255,.82)
-}
-
-.ruins .gallery-symbol{color:#eee2d1}
-
-/* WONDERLIGHT */
-.wonderlight{
-background:linear-gradient(145deg,#d7e4bc,#a9c58b,#718c6d)
-}
-
-.wonderlight .gallery-symbol{
-color:#edf5df
-}
-
 /* BADGES */
 .project-badge{
 position:absolute;
@@ -114,22 +93,9 @@ background:#fff
 }
 
 .aura-badge{color:#879c5b}
+.crystal-badge{color:#a462b1}
+.ruins-badge{color:#718c56}
 .fairy-badge{color:#d87e9c}
-.ruins-badge{color:#83965e}
-
-.production-badge{
-position:absolute;
-z-index:5;
-top:17px;
-right:17px;
-padding:8px 13px;
-border-radius:20px;
-background:rgba(255,255,255,.93);
-color:#81945f;
-font-size:10px;
-font-weight:800;
-letter-spacing:.6px
-}
 
 /* CARD INFO */
 .gallery-info{
@@ -171,7 +137,39 @@ color:#fff;
 transform:translateX(3px)
 }
 
-/* PRODUCTION */
+/* WONDERLIGHT PARK */
+.wonderlight{
+position:relative;
+height:260px;
+overflow:hidden;
+background:
+radial-gradient(circle at 65% 35%,rgba(255,255,255,.35),transparent 20%),
+linear-gradient(145deg,#d9e7bd,#a8c38c,#758d6d)
+}
+
+.wonderlight-symbol{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+color:rgba(255,255,255,.82);
+font-size:100px
+}
+
+.production-badge{
+position:absolute;
+z-index:5;
+top:17px;
+right:17px;
+padding:8px 13px;
+border-radius:20px;
+background:rgba(255,255,255,.93);
+color:#81945f;
+font-size:10px;
+font-weight:800;
+letter-spacing:.6px
+}
+
 .production-card{cursor:default}
 
 .production-card:hover{
@@ -192,6 +190,7 @@ letter-spacing:.6px
 .coming-card{cursor:default}
 
 .coming{
+height:260px;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -199,7 +198,9 @@ background:#f8f5f5;
 color:#c0bbc0
 }
 
-.coming-card:hover{transform:none}
+.coming-card:hover{
+transform:none
+}
 
 /* FOOTER */
 .work-footer{
@@ -231,11 +232,12 @@ font-weight:700
 .work-hero{margin-top:30px;padding:35px 25px}
 .work-hero h1{font-size:37px}
 .gallery{grid-template-columns:1fr}
-.gallery-image{height:230px}
+.gallery-image,.wonderlight,.coming{height:230px}
 .work-heading{align-items:flex-start;flex-direction:column;gap:10px}
 .work-footer{align-items:flex-start;flex-direction:column;gap:10px}
 }
 </style>
+
 </head>
 
 <body>
@@ -319,9 +321,7 @@ VIEW PROJECT
 <p>Fantasy Countryside · Environment</p>
 </div>
 
-<span class="gallery-arrow">
-→
-</span>
+<span class="gallery-arrow">→</span>
 
 </div>
 
@@ -338,7 +338,7 @@ src="crystal-caverns-hero.png"
 alt="Crystal Caverns 3D environment"
 >
 
-<span class="project-badge">
+<span class="project-badge crystal-badge">
 VIEW PROJECT
 </span>
 
@@ -351,9 +351,7 @@ VIEW PROJECT
 <p>Fantasy Environment · Blender</p>
 </div>
 
-<span class="gallery-arrow">
-→
-</span>
+<span class="gallery-arrow">→</span>
 
 </div>
 
@@ -363,11 +361,12 @@ VIEW PROJECT
 <!-- OVERGROWN RUINS -->
 <a href="overgrown-ruins.html" class="gallery-card">
 
-<div class="gallery-image ruins">
+<div class="gallery-image real">
 
-<span class="gallery-symbol">
-♜
-</span>
+<img
+src="overgrown-ruins-hero.png"
+alt="Overgrown Ruins 3D environment"
+>
 
 <span class="project-badge ruins-badge">
 VIEW PROJECT
@@ -379,12 +378,10 @@ VIEW PROJECT
 
 <div>
 <h3>Overgrown Ruins</h3>
-<p>Environment Design</p>
+<p>Overgrown Environment · Blender</p>
 </div>
 
-<span class="gallery-arrow">
-→
-</span>
+<span class="gallery-arrow">→</span>
 
 </div>
 
@@ -414,9 +411,7 @@ VIEW PROJECT
 <p>3D Models · Prop Design</p>
 </div>
 
-<span class="gallery-arrow">
-→
-</span>
+<span class="gallery-arrow">→</span>
 
 </div>
 
@@ -426,9 +421,9 @@ VIEW PROJECT
 <!-- WONDERLIGHT PARK -->
 <article class="gallery-card production-card">
 
-<div class="gallery-image wonderlight">
+<div class="wonderlight">
 
-<span class="gallery-symbol">
+<span class="wonderlight-symbol">
 ✦
 </span>
 
@@ -461,10 +456,10 @@ IN PRODUCTION
 </article>
 
 
-<!-- FUTURE -->
+<!-- FUTURE PROJECT -->
 <article class="gallery-card coming-card">
 
-<div class="gallery-image coming">
+<div class="coming">
 <span>More coming soon...</span>
 </div>
 
@@ -501,6 +496,7 @@ Return to portfolio →
 </div>
 
 </body>
+
 </html>
 
 <!-- ===== COMPLETE PROJECTS.HTML - END ===== -->
