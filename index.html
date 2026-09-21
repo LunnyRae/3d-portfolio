@@ -1,116 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lunar Bloom | 3D Artist</title>
+    <title>3D Artist Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-<div class="portfolio-app">
+<div class="portfolio">
 
-    <!-- =========================
+    <!-- =====================================
          LEFT SIDEBAR
-    ========================== -->
+    ====================================== -->
+
     <aside class="sidebar">
 
-        <div class="logo">
-            <span class="logo-pink">LUNAR</span>
-            <span class="logo-green">BLOOM</span>
+        <div class="brand">
+            <span class="brand-pink">LUNAR</span>
+            <span class="brand-green">BLOOM</span>
         </div>
 
-        <div class="active-project">
-            <span class="grid-icon">▦</span>
+
+        <div class="current-project">
+            <span class="current-icon">▦</span>
             <span>AURA ROSA</span>
         </div>
 
-        <nav class="sidebar-nav">
 
-            <a href="#home" class="nav-link active">
+        <nav class="main-nav">
+
+            <a href="#home" class="nav-item">
                 <span class="nav-icon">⌂</span>
                 <span>Home</span>
             </a>
 
-            <a href="#about" class="nav-link">
+            <a href="#about" class="nav-item">
                 <span class="nav-icon">●</span>
                 <span>About</span>
             </a>
 
-            <a href="#contact" class="nav-link">
+            <a href="#contact" class="nav-item">
                 <span class="nav-icon">♣</span>
                 <span>Contact</span>
             </a>
 
-            <a href="#projects" class="nav-link">
+            <a href="#projects" class="nav-item">
                 <span class="nav-icon">▣</span>
                 <span>Project Pages</span>
             </a>
 
-            <button class="nav-link nav-button" id="settingsButton">
+            <button class="nav-item" id="settingsButton">
                 <span class="nav-icon">⚙</span>
                 <span>Settings</span>
             </button>
 
         </nav>
 
-        <div class="sidebar-divider"></div>
 
-        <div class="sidebar-bottom">
+        <div class="sidebar-line"></div>
 
-            <button class="nav-link nav-button">
+
+        <div class="account-nav">
+
+            <button class="nav-item">
                 <span class="nav-icon">●</span>
                 <span>My Account</span>
             </button>
 
-            <button class="nav-link nav-button">
+            <button class="nav-item">
                 <span class="nav-icon">↪</span>
                 <span>Sign Out</span>
             </button>
 
         </div>
 
-        <div class="help-link">
-            <span>?</span>
+
+        <div class="help">
+
+            <span class="help-circle">?</span>
+
             <strong>Help</strong>
+
             <button>•••</button>
+
         </div>
 
     </aside>
 
 
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
-    <main class="main-content" id="home">
 
-        <!-- SEARCH BAR -->
+    <!-- =====================================
+         CENTER
+    ====================================== -->
+
+    <main class="content" id="home">
+
+
+        <!-- TOP BAR -->
+
         <header class="topbar">
 
-            <div class="search-container">
-                <span class="search-icon">⌕</span>
+            <div class="search">
+
+                <span class="search-symbol">⌕</span>
 
                 <input
-                    id="searchInput"
                     type="text"
+                    id="searchInput"
                     placeholder="Search Here"
                 >
+
             </div>
 
-            <div class="top-buttons">
 
-                <button class="square-button" aria-label="Messages">
+            <div class="top-actions">
+
+                <button aria-label="Messages">
                     ♡
                 </button>
 
-                <button class="square-button" aria-label="Notifications">
+                <button aria-label="Notifications">
                     ♧
                 </button>
 
@@ -119,12 +142,14 @@
         </header>
 
 
-        <!-- =========================
+
+        <!-- =====================================
              HERO
-        ========================== -->
+        ====================================== -->
+
         <section class="hero">
 
-            <div class="hero-text">
+            <div class="hero-copy">
 
                 <h1>
                     Creating<br>
@@ -135,13 +160,20 @@
                     Environment artist &amp; 3D modeller
                 </p>
 
-                <div class="hero-buttons">
 
-                    <a href="#projects" class="button button-white">
+                <div class="hero-actions">
+
+                    <a
+                        href="#projects"
+                        class="primary-button"
+                    >
                         View my work
                     </a>
 
-                    <a href="#about" class="button button-outline">
+                    <a
+                        href="#about"
+                        class="secondary-button"
+                    >
                         About me
                     </a>
 
@@ -150,81 +182,125 @@
             </div>
 
 
-            <div class="hero-art">
 
-                <div class="hero-circle hero-circle-one"></div>
-                <div class="hero-circle hero-circle-two"></div>
+            <!--
+                This is temporary artwork.
 
-                <div class="placeholder-house">
+                Later we will replace this entire visual
+                area with one of YOUR actual Blender renders.
+            -->
 
-                    <div class="house-roof"></div>
+            <div class="hero-visual">
 
-                    <div class="house-body">
+                <div class="fairy-wing wing-left"></div>
 
-                        <div class="house-window"></div>
+                <div class="fairy-wing wing-right"></div>
 
-                        <div class="house-door"></div>
+
+                <div class="cottage">
+
+                    <div class="cottage-top"></div>
+
+                    <div class="cottage-main">
+
+                        <div class="cottage-window"></div>
+
+                        <div class="cottage-door">
+
+                            <span class="door-window"></span>
+
+                            <span class="door-handle"></span>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-                <div class="flower flower-one">✿</div>
-                <div class="flower flower-two">✿</div>
-                <div class="flower flower-three">✿</div>
-                <div class="flower flower-four">✿</div>
+
+                <span class="hero-flower flower-1">✿</span>
+                <span class="hero-flower flower-2">✿</span>
+                <span class="hero-flower flower-3">✿</span>
+                <span class="hero-flower flower-4">✿</span>
+                <span class="hero-flower flower-5">✿</span>
 
             </div>
 
         </section>
 
 
-        <div class="slider-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+
+        <!-- HERO DOTS -->
+
+        <div class="hero-dots">
+
+            <button class="hero-dot active"></button>
+
+            <button class="hero-dot"></button>
+
+            <button class="hero-dot"></button>
+
         </div>
 
 
-        <!-- =========================
-             PROJECTS
-        ========================== -->
-        <section class="projects-section" id="projects">
 
-            <div class="section-heading">
+        <!-- =====================================
+             SELECTED WORK
+        ====================================== -->
+
+        <section
+            class="projects"
+            id="projects"
+        >
+
+            <div class="section-header">
 
                 <h2>Selected Work</h2>
 
-                <button class="view-all" id="viewAllButton">
-                    View All →
+                <button id="viewAllButton">
+                    View All
+                    <span>→</span>
                 </button>
 
             </div>
 
 
-            <div class="project-grid" id="projectGrid">
 
-                <!-- PROJECT 1 -->
-                <article class="project-card">
+            <div class="project-cards">
 
-                    <div class="project-image floral-project">
 
-                        <div class="mini-house">
-                            <div class="mini-roof"></div>
-                            <div class="mini-body"></div>
+                <!-- PROJECT ONE -->
+
+                <article
+                    class="project-card"
+                    data-project="floral doorway"
+                >
+
+                    <div class="project-preview floral-preview">
+
+                        <div class="preview-cottage">
+
+                            <div class="preview-roof"></div>
+
+                            <div class="preview-house"></div>
+
                         </div>
 
-                        <span class="decor flower-a">✿</span>
-                        <span class="decor flower-b">✿</span>
-                        <span class="decor flower-c">✿</span>
+
+                        <span class="preview-flower pf1">✿</span>
+
+                        <span class="preview-flower pf2">✿</span>
+
+                        <span class="preview-flower pf3">✿</span>
 
                     </div>
 
-                    <div class="project-info">
+
+                    <div class="project-bottom">
 
                         <h3>Floral Doorway</h3>
 
-                        <button class="more-button">
+                        <button aria-label="Project options">
                             •••
                         </button>
 
@@ -233,23 +309,34 @@
                 </article>
 
 
-                <!-- PROJECT 2 -->
-                <article class="project-card">
 
-                    <div class="project-image crystal-project">
+                <!-- PROJECT TWO -->
 
-                        <div class="crystal crystal-one"></div>
-                        <div class="crystal crystal-two"></div>
-                        <div class="crystal crystal-three"></div>
-                        <div class="crystal crystal-four"></div>
+                <article
+                    class="project-card"
+                    data-project="crystal caverns"
+                >
+
+                    <div class="project-preview crystal-preview">
+
+                        <span class="crystal c1"></span>
+
+                        <span class="crystal c2"></span>
+
+                        <span class="crystal c3"></span>
+
+                        <span class="crystal c4"></span>
+
+                        <span class="crystal c5"></span>
 
                     </div>
 
-                    <div class="project-info">
+
+                    <div class="project-bottom">
 
                         <h3>Crystal Caverns</h3>
 
-                        <button class="more-button">
+                        <button aria-label="Project options">
                             •••
                         </button>
 
@@ -258,24 +345,36 @@
                 </article>
 
 
-                <!-- PROJECT 3 -->
-                <article class="project-card">
 
-                    <div class="project-image ruins-project">
+                <!-- PROJECT THREE -->
 
-                        <div class="ruin-column column-one"></div>
-                        <div class="ruin-column column-two"></div>
-                        <div class="ruin-column column-three"></div>
+                <article
+                    class="project-card"
+                    data-project="overgrown ruins"
+                >
 
-                        <div class="ruin-arch"></div>
+                    <div class="project-preview ruins-preview">
+
+                        <span class="ruin-column rc1"></span>
+
+                        <span class="ruin-column rc2"></span>
+
+                        <span class="ruin-column rc3"></span>
+
+                        <span class="ruin-arch"></span>
+
+                        <span class="ruin-plant plant1">✿</span>
+
+                        <span class="ruin-plant plant2">❀</span>
 
                     </div>
 
-                    <div class="project-info">
+
+                    <div class="project-bottom">
 
                         <h3>Overgrown Ruins</h3>
 
-                        <button class="more-button">
+                        <button aria-label="Project options">
                             •••
                         </button>
 
@@ -288,42 +387,55 @@
         </section>
 
 
-        <!-- =========================
-             ABOUT / SKILLS
-        ========================== -->
-        <section class="info-grid" id="about">
 
-            <article class="info-card">
+        <!-- =====================================
+             ABOUT + SKILLS
+        ====================================== -->
 
-                <div class="info-icon">
+        <section
+            class="information"
+            id="about"
+        >
+
+
+            <article class="information-card">
+
+                <div class="information-icon">
                     ●
                 </div>
 
-                <div class="info-text">
+
+                <div class="information-copy">
 
                     <h3>About me</h3>
 
                     <p>
-                        I create detailed models, textures
-                        and immersive spaces.
+                        I create detailed models,
+                        textures and immersive spaces.
                     </p>
 
                 </div>
 
-                <button class="info-more">
+
+                <button
+                    class="card-options"
+                    aria-label="About options"
+                >
                     •••
                 </button>
 
             </article>
 
 
-            <article class="info-card">
 
-                <div class="info-icon cube-icon">
+            <article class="information-card">
+
+                <div class="information-icon cube">
                     ◇
                 </div>
 
-                <div class="info-text">
+
+                <div class="information-copy">
 
                     <h3>My skills</h3>
 
@@ -334,222 +446,345 @@
 
                 </div>
 
-                <button class="info-more">
+
+                <button
+                    class="card-options"
+                    aria-label="Skills options"
+                >
                     •••
                 </button>
 
             </article>
 
+
         </section>
+
 
     </main>
 
 
-    <!-- =========================
-         RIGHT SIDEBAR
-    ========================== -->
-    <aside class="right-panel">
+
+    <!-- =====================================
+         RIGHT PANEL
+    ====================================== -->
+
+    <aside class="profile-panel">
+
 
         <!-- PROFILE -->
-        <section class="profile-section">
 
-            <div class="profile-header">
+        <section class="profile">
 
-                <div>
+            <div class="profile-top">
 
-                    <h3>Lunivé Rosebloom</h3>
+                <div class="profile-name">
 
-                    <p>@lunarivemodels</p>
+                    <strong>
+                        Lunivé Rosebloom
+                    </strong>
+
+                    <span>
+                        @lunarivemodels
+                    </span>
 
                 </div>
 
-                <div class="profile-avatar">
+
+                <div class="avatar">
                     🦋
                 </div>
 
             </div>
 
 
-            <div class="social-icons">
 
-                <a href="#" aria-label="Instagram">◎</a>
+            <div class="socials">
 
-                <a href="#" aria-label="X">𝕏</a>
+                <a href="#" aria-label="Instagram">
+                    ◎
+                </a>
 
-                <a href="#" aria-label="ArtStation">△</a>
+                <a href="#" aria-label="X">
+                    𝕏
+                </a>
+
+                <a href="#" aria-label="ArtStation">
+                    △
+                </a>
 
             </div>
 
 
-            <div class="colors-title">
+
+            <strong class="palette-title">
                 #COLORS
-            </div>
+            </strong>
 
-            <div class="color-palette">
 
-                <span class="green"></span>
-                <span class="pink"></span>
-                <span class="cream"></span>
+            <div class="palette">
+
+                <span class="palette-green"></span>
+
+                <span class="palette-pink"></span>
+
+                <span class="palette-cream"></span>
 
             </div>
 
         </section>
 
 
-        <!-- ARTIST TYPE -->
-        <section class="artist-section">
 
-            <div class="right-title">
+        <!-- ARTIST INFO -->
+
+        <section class="artist-info">
+
+            <div class="panel-heading">
 
                 <div>
-                    <h2>3D Artist</h2>
-                    <p>Models · Environments · Little Worlds</p>
+
+                    <h2>
+                        3D Artist
+                    </h2>
+
+                    <p>
+                        Models · Environments · Little Worlds
+                    </p>
+
                 </div>
 
-                <button>•••</button>
+
+                <button>
+                    •••
+                </button>
 
             </div>
 
         </section>
 
 
-        <!-- PROJECT LINKS -->
-        <section class="side-projects">
 
-            <div class="right-title">
+        <!-- =====================================
+             PROJECT PAGES
+        ====================================== -->
 
-                <h2>Project Pages</h2>
+        <section class="project-pages">
 
-                <button>•••</button>
+            <div class="panel-heading">
+
+                <h2>
+                    Project Pages
+                </h2>
+
+                <button>
+                    •••
+                </button>
 
             </div>
 
 
-            <button class="side-project-card">
 
-                <div class="side-thumbnail floral-thumbnail">
+            <button class="side-project">
+
+                <div class="side-image floral-side">
                     ✿
                 </div>
 
-                <div>
-                    <strong>AURA ROSA</strong>
-                    <span>Fantasy Cottage</span>
+
+                <div class="side-project-text">
+
+                    <strong>
+                        AURA ROSA
+                    </strong>
+
+                    <span>
+                        Fantasy Cottage
+                    </span>
+
                 </div>
 
-                <b>›</b>
+
+                <span class="side-arrow">
+                    ›
+                </span>
 
             </button>
 
 
-            <button class="side-project-card">
 
-                <div class="side-thumbnail crystal-thumbnail">
+            <button class="side-project">
+
+                <div class="side-image crystal-side">
                     ♦
                 </div>
 
-                <div>
-                    <strong>CRYSTAL CAVERNS</strong>
-                    <span>Environment</span>
+
+                <div class="side-project-text">
+
+                    <strong>
+                        CRYSTAL CAVERNS
+                    </strong>
+
+                    <span>
+                        Environment
+                    </span>
+
                 </div>
 
-                <b>›</b>
+
+                <span class="side-arrow">
+                    ›
+                </span>
 
             </button>
 
 
-            <button class="side-project-card">
 
-                <div class="side-thumbnail ruins-thumbnail">
+            <button class="side-project">
+
+                <div class="side-image ruins-side">
                     ♜
                 </div>
 
-                <div>
-                    <strong>OVERGROWN RUINS</strong>
-                    <span>Environment</span>
+
+                <div class="side-project-text">
+
+                    <strong>
+                        OVERGROWN RUINS
+                    </strong>
+
+                    <span>
+                        Environment
+                    </span>
+
                 </div>
 
-                <b>›</b>
+
+                <span class="side-arrow">
+                    ›
+                </span>
 
             </button>
 
 
-            <button class="side-project-card">
 
-                <div class="side-thumbnail lantern-thumbnail">
+            <button class="side-project">
+
+                <div class="side-image props-side">
                     ♧
                 </div>
 
-                <div>
-                    <strong>FAIRY PROPS</strong>
-                    <span>3D Models</span>
+
+                <div class="side-project-text">
+
+                    <strong>
+                        FAIRY PROPS
+                    </strong>
+
+                    <span>
+                        3D Models
+                    </span>
+
                 </div>
 
-                <b>›</b>
+
+                <span class="side-arrow">
+                    ›
+                </span>
 
             </button>
 
         </section>
 
 
-        <!-- CONTACT -->
-        <section class="contact-section" id="contact">
 
-            <div class="right-title">
+        <!-- =====================================
+             CONTACT
+        ====================================== -->
 
-                <h2>Let's create together</h2>
+        <section
+            class="contact"
+            id="contact"
+        >
 
-                <button>•••</button>
+            <div class="panel-heading">
+
+                <h2>
+                    Let's create together
+                </h2>
+
+                <button>
+                    •••
+                </button>
 
             </div>
 
 
+
             <a
-                class="contact-card"
+                class="contact-box"
                 href="mailto:hello@example.com"
             >
 
-                <div class="mail-icon">
+                <div class="contact-icon">
                     ✉
                 </div>
 
-                <div>
 
-                    <strong>Get in touch</strong>
+                <div class="contact-copy">
+
+                    <strong>
+                        Get in touch
+                    </strong>
 
                     <span>
-                        Open to freelance work,<br>
-                        collaborations and<br>
+                        Open to freelance work,
+                        collaborations and
                         creative projects.
                     </span>
 
                 </div>
 
-                <b>→</b>
+
+                <span class="contact-arrow">
+                    →
+                </span>
 
             </a>
 
         </section>
+
 
     </aside>
 
 </div>
 
 
-<!-- =========================
-     SETTINGS POPUP
-========================== -->
-<div class="modal-overlay" id="settingsModal">
 
-    <div class="modal">
+<!-- =====================================
+     SETTINGS POPUP
+====================================== -->
+
+<div
+    class="settings-overlay"
+    id="settingsModal"
+>
+
+    <div class="settings-window">
 
         <button
-            class="modal-close"
+            class="settings-close"
             id="closeSettings"
+            aria-label="Close settings"
         >
             ×
         </button>
 
-        <h2>Settings</h2>
+
+        <h2>
+            Settings
+        </h2>
+
 
         <p>
             Portfolio settings will appear here.
@@ -560,7 +795,11 @@
 </div>
 
 
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
+
+<!-- ===== END OF INDEX.HTML ===== -->
