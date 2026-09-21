@@ -66,8 +66,8 @@ z-index:2;
 background:linear-gradient(
 90deg,
 rgba(39,30,28,.82) 0%,
-rgba(47,34,35,.6) 27%,
-rgba(50,38,40,.2) 52%,
+rgba(47,34,35,.60) 27%,
+rgba(50,38,40,.20) 52%,
 rgba(30,25,25,.02) 78%
 )
 }
@@ -116,7 +116,8 @@ gap:60px;
 padding:65px 15px
 }
 
-.project-intro h2,.models-title h2{
+.project-intro h2,
+.models-title h2{
 margin-bottom:15px;
 font-size:27px
 }
@@ -140,7 +141,9 @@ border-bottom:1px solid #f0edef
 }
 
 .detail:last-child{border:0}
-.detail span,.detail strong{display:block}
+
+.detail span,
+.detail strong{display:block}
 
 .detail span{
 margin-bottom:3px;
@@ -155,7 +158,11 @@ letter-spacing:.8px
 
 /* SELECTED MODELS */
 .models-title{margin-bottom:25px}
-.models-title p{color:#99959b;font-size:14px}
+
+.models-title p{
+color:#99959b;
+font-size:14px
+}
 
 .model-gallery{
 display:grid;
@@ -165,60 +172,73 @@ gap:22px
 
 .model-card{
 position:relative;
-height:300px;
+height:310px;
 overflow:hidden;
 border-radius:24px;
-background:linear-gradient(145deg,#f7d9df,#d8d8bc,#aab98a);
-box-shadow:0 10px 30px rgba(70,50,60,.07)
+background:#ddd;
+box-shadow:0 10px 30px rgba(70,50,60,.08);
+transition:transform .25s ease,box-shadow .25s ease
 }
 
+.model-card:hover{
+transform:translateY(-5px);
+box-shadow:0 16px 35px rgba(70,50,60,.14)
+}
+
+.model-card img{
+width:100%;
+height:100%;
+display:block;
+object-fit:cover;
+object-position:center;
+transition:transform .45s ease,filter .45s ease
+}
+
+.model-card:hover img{
+transform:scale(1.035);
+filter:brightness(1.04)
+}
+
+/* LARGE ENVIRONMENT IMAGE */
 .model-card.large{
 grid-column:1/-1;
-height:470px
+height:500px
 }
 
-.model-placeholder{
+/* CAPTIONS */
+.model-caption{
 position:absolute;
-inset:0;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-color:rgba(255,255,255,.95)
-}
-
-.model-placeholder b{
-margin-bottom:10px;
-font-size:52px
-}
-
-.model-placeholder span{
-font-size:12px;
+z-index:4;
+left:18px;
+bottom:18px;
+padding:8px 13px;
+border-radius:20px;
+background:rgba(38,31,29,.72);
+backdrop-filter:blur(7px);
+color:#fff;
+font-size:11px;
 font-weight:800;
-letter-spacing:.5px
+letter-spacing:.5px;
+opacity:0;
+transform:translateY(5px);
+transition:.25s
 }
 
-.model-card:before{
+.model-card:hover .model-caption{
+opacity:1;
+transform:translateY(0)
+}
+
+.model-card:after{
 content:"";
 position:absolute;
-width:190px;
-height:190px;
-right:-25px;
-bottom:-35px;
-border-radius:50%;
-background:rgba(255,255,255,.14)
-}
-
-.model-card:nth-child(2){
-background:linear-gradient(145deg,#e7dfc9,#bacd9a,#7f966a)
-}
-
-.model-card:nth-child(3){
-background:linear-gradient(145deg,#ffd9e3,#e9b6c4,#c9919f)
-}
-
-.model-card.large{
-background:linear-gradient(135deg,#dfd1bd,#a9b886,#e8bcc7)
+inset:0;
+background:linear-gradient(
+180deg,
+transparent 60%,
+rgba(35,27,27,.22)
+);
+pointer-events:none
 }
 
 /* PROCESS */
@@ -294,33 +314,95 @@ font-size:13px
 
 /* RESPONSIVE */
 @media(max-width:900px){
+
 .fairy-page{padding:25px}
+
 .fairy-hero{height:480px}
+
 .fairy-hero h1{font-size:50px}
+
 .fairy-hero-copy{left:35px}
-.project-intro{grid-template-columns:1fr;gap:30px}
-.model-gallery{grid-template-columns:1fr 1fr}
-.model-card.large{grid-column:1/-1;height:400px}
-.process-grid{grid-template-columns:1fr}
+
+.project-intro{
+grid-template-columns:1fr;
+gap:30px
+}
+
+.model-gallery{
+grid-template-columns:1fr 1fr
+}
+
+.model-card.large{
+grid-column:1/-1;
+height:400px
+}
+
+.process-grid{
+grid-template-columns:1fr
+}
+
 }
 
 @media(max-width:600px){
+
 .fairy-page{padding:18px}
+
 .fairy-hero{height:500px}
-.fairy-hero-copy{left:25px;right:25px}
-.fairy-hero h1{font-size:42px}
-.fairy-hero p{max-width:270px;font-size:15px}
-.hero-image{object-position:58% center}
-.hero-overlay{background:linear-gradient(90deg,rgba(37,28,28,.9),rgba(50,35,40,.4))}
-.project-intro{padding:45px 5px}
-.model-gallery{grid-template-columns:1fr}
-.model-card,.model-card.large{grid-column:auto;height:280px}
-.process{padding:25px}
-.bottom-nav{align-items:flex-start;flex-direction:column;gap:15px}
+
+.fairy-hero-copy{
+left:25px;
+right:25px
+}
+
+.fairy-hero h1{
+font-size:42px
+}
+
+.fairy-hero p{
+max-width:270px;
+font-size:15px
+}
+
+.hero-image{
+object-position:58% center
+}
+
+.hero-overlay{
+background:linear-gradient(
+90deg,
+rgba(37,28,28,.90),
+rgba(50,35,40,.40)
+)
+}
+
+.project-intro{
+padding:45px 5px
+}
+
+.model-gallery{
+grid-template-columns:1fr
+}
+
+.model-card,
+.model-card.large{
+grid-column:auto;
+height:300px
+}
+
+.process{
+padding:25px
+}
+
+.bottom-nav{
+align-items:flex-start;
+flex-direction:column;
+gap:15px
+}
+
 }
 </style>
-</head>
 
+</head>
 
 <body>
 
@@ -367,8 +449,8 @@ Props
 
 <p>
 A collection of stylized fantasy props,
-architecture and decorative assets inspired
-by enchanted gardens and little worlds.
+architecture and natural assets designed
+for magical environments.
 </p>
 
 </div>
@@ -381,14 +463,16 @@ by enchanted gardens and little worlds.
 
 <div>
 
-<h2>About the project</h2>
+<h2>
+About the project
+</h2>
 
 <p>
 Fairy Props is a collection of stylized fantasy assets
 focused on decorative architecture, natural details and
-whimsical environment design. The collection combines
-stone, wood, foliage, flowers and warm lighting to create
-props that can help bring magical environments to life.
+environment design. The collection combines stone,
+foliage, plants, lanterns and environmental elements
+designed to work together inside magical worlds.
 </p>
 
 </div>
@@ -426,10 +510,12 @@ props that can help bring magical environments to life.
 
 <div class="models-title">
 
-<h2>Selected Models</h2>
+<h2>
+Selected Models
+</h2>
 
 <p>
-A closer look at individual props and environment assets.
+A closer look at individual props, foliage and environment assets.
 </p>
 
 </div>
@@ -437,44 +523,66 @@ A closer look at individual props and environment assets.
 
 <div class="model-gallery">
 
+
+<!-- STONE PLANTER -->
 <div class="model-card">
 
-<div class="model-placeholder">
-<b>♧</b>
-<span>ARCHITECTURE MODEL</span>
-</div>
+<img
+src="fairy-props-planter.png"
+alt="Stone planter 3D prop"
+>
+
+<span class="model-caption">
+STONE PLANTER
+</span>
 
 </div>
 
 
+<!-- PLANTS -->
 <div class="model-card">
 
-<div class="model-placeholder">
-<b>✿</b>
-<span>NATURE PROP</span>
-</div>
+<img
+src="fairy-props-plants.png"
+alt="Fantasy plants and foliage"
+>
+
+<span class="model-caption">
+FOLIAGE &amp; PLANTS
+</span>
 
 </div>
 
 
+<!-- LANTERNS -->
 <div class="model-card">
 
-<div class="model-placeholder">
-<b>◇</b>
-<span>DECORATIVE PROP</span>
-</div>
+<img
+src="fairy-props-lanterns.png"
+alt="Hanging lantern 3D props"
+>
+
+<span class="model-caption">
+HANGING LANTERNS
+</span>
 
 </div>
 
 
+<!-- ENVIRONMENT -->
 <div class="model-card large">
 
-<div class="model-placeholder">
-<b>✦</b>
-<span>FULL PROP SHOWCASE</span>
-</div>
+<img
+src="fairy-props-environment.png"
+alt="Fairy Props used inside an environment"
+>
+
+<span class="model-caption">
+ENVIRONMENT SHOWCASE
+</span>
 
 </div>
+
 
 </div>
 
@@ -484,19 +592,26 @@ A closer look at individual props and environment assets.
 <!-- PROCESS -->
 <section class="process">
 
-<h2>Creating the Props</h2>
+<h2>
+Creating the Props
+</h2>
 
 <div class="process-grid">
 
+
 <div class="process-step">
 
-<span class="step-number">1</span>
+<span class="step-number">
+1
+</span>
 
-<h3>Concept &amp; Blockout</h3>
+<h3>
+Modeling
+</h3>
 
 <p>
-Planning the silhouette, proportions and
-overall fantasy style of each asset.
+Creating clean stylized models with shapes
+designed to work efficiently in game environments.
 </p>
 
 </div>
@@ -504,13 +619,17 @@ overall fantasy style of each asset.
 
 <div class="process-step">
 
-<span class="step-number">2</span>
+<span class="step-number">
+2
+</span>
 
-<h3>Modeling</h3>
+<h3>
+Texturing
+</h3>
 
 <p>
-Building the stone, wood, foliage and
-decorative details of the models.
+Building materials and textures that maintain
+a consistent fantasy environment style.
 </p>
 
 </div>
@@ -518,16 +637,21 @@ decorative details of the models.
 
 <div class="process-step">
 
-<span class="step-number">3</span>
+<span class="step-number">
+3
+</span>
 
-<h3>Texturing &amp; Polish</h3>
+<h3>
+Environment Integration
+</h3>
 
 <p>
-Adding materials, colour, flowers and lighting
-to create the final stylized presentation.
+Combining the individual props with foliage
+and architecture to create cohesive scenes.
 </p>
 
 </div>
+
 
 </div>
 
