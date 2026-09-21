@@ -1,1 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fairy Props | 3D Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.fairy-page{min-height:100vh;padding:45px;background:#fbfaf9;color:#59585f}
+.fairy-container{max-width:1250px;margin:auto}
+
+/* TOP */
+.fairy-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:42px}
+.fairy-brand{font-size:22px;font-weight:800;line-height:19px}
+.fairy-brand span{display:block}
+.brand-pink{color:#ff9db8}
+.brand-green{color:#bad477}
+
+.back-projects{
+padding:12px 21px;
+border-radius:25px;
+background:#fff;
+color:#68666d;
+font-weight:700;
+box-shadow:0 7px 25px rgba(70,50,60,.07);
+transition:.2s
+}
+
+.back-projects:hover{
+transform:translateY(-2px);
+color:#e886a3
+}
+
+/* HERO */
+.fairy-hero{
+position:relative;
+height:520px;
+overflow:hidden;
+border-radius:38px;
+background:#80766b;
+box-shadow:0 15px 40px rgba(70,55,45,.12)
+}
+
+.hero-image{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center;
+display:block
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+z-index:2;
+background:linear-gradient(
+90deg,
+rgba(39,30,28,.82) 0%,
+rgba(47,34,35,.6) 27%,
+rgba(50,38,40,.2) 52%,
+rgba(30,25,25,.02) 78%
+)
+}
+
+.fairy-hero-copy{
+position:absolute;
+z-index:5;
+left:50px;
+top:50%;
+transform:translateY(-50%);
+color:#fff
+}
+
+.fairy-label{
+display:inline-block;
+margin-bottom:15px;
+padding:8px 14px;
+border:1px solid rgba(255,255,255,.45);
+border-radius:20px;
+background:rgba(255,255,255,.13);
+backdrop-filter:blur(5px);
+font-size:12px;
+font-weight:800;
+letter-spacing:1px
+}
+
+.fairy-hero h1{
+margin-bottom:15px;
+font-size:64px;
+font-weight:500;
+line-height:1
+}
+
+.fairy-hero p{
+max-width:400px;
+font-size:17px;
+line-height:1.6;
+opacity:.95
+}
+
+/* ABOUT */
+.project-intro{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:60px;
+padding:65px 15px
+}
+
+.project-intro h2,.models-title h2{
+margin-bottom:15px;
+font-size:27px
+}
+
+.project-intro p{
+color:#8d8991;
+line-height:1.8;
+font-size:15px
+}
+
+.project-details{
+padding:25px;
+border-radius:20px;
+background:#fff;
+box-shadow:0 8px 28px rgba(70,50,60,.06)
+}
+
+.detail{
+padding:12px 0;
+border-bottom:1px solid #f0edef
+}
+
+.detail:last-child{border:0}
+.detail span,.detail strong{display:block}
+
+.detail span{
+margin-bottom:3px;
+color:#aaa5aa;
+font-size:11px;
+font-weight:800;
+text-transform:uppercase;
+letter-spacing:.8px
+}
+
+.detail strong{font-size:14px}
+
+/* SELECTED MODELS */
+.models-title{margin-bottom:25px}
+.models-title p{color:#99959b;font-size:14px}
+
+.model-gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px
+}
+
+.model-card{
+position:relative;
+height:300px;
+overflow:hidden;
+border-radius:24px;
+background:linear-gradient(145deg,#f7d9df,#d8d8bc,#aab98a);
+box-shadow:0 10px 30px rgba(70,50,60,.07)
+}
+
+.model-card.large{
+grid-column:1/-1;
+height:470px
+}
+
+.model-placeholder{
+position:absolute;
+inset:0;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:rgba(255,255,255,.95)
+}
+
+.model-placeholder b{
+margin-bottom:10px;
+font-size:52px
+}
+
+.model-placeholder span{
+font-size:12px;
+font-weight:800;
+letter-spacing:.5px
+}
+
+.model-card:before{
+content:"";
+position:absolute;
+width:190px;
+height:190px;
+right:-25px;
+bottom:-35px;
+border-radius:50%;
+background:rgba(255,255,255,.14)
+}
+
+.model-card:nth-child(2){
+background:linear-gradient(145deg,#e7dfc9,#bacd9a,#7f966a)
+}
+
+.model-card:nth-child(3){
+background:linear-gradient(145deg,#ffd9e3,#e9b6c4,#c9919f)
+}
+
+.model-card.large{
+background:linear-gradient(135deg,#dfd1bd,#a9b886,#e8bcc7)
+}
+
+/* PROCESS */
+.process{
+margin-top:65px;
+padding:40px;
+border-radius:28px;
+background:#fff;
+box-shadow:0 8px 28px rgba(70,50,60,.05)
+}
+
+.process h2{
+margin-bottom:30px;
+font-size:27px
+}
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px
+}
+
+.process-step{
+position:relative;
+padding-left:48px
+}
+
+.step-number{
+position:absolute;
+left:0;
+top:0;
+width:35px;
+height:35px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#fff0f4;
+color:#dd829d;
+font-weight:800
+}
+
+.process-step h3{
+margin-bottom:6px;
+font-size:15px
+}
+
+.process-step p{
+color:#99959b;
+font-size:13px;
+line-height:1.6
+}
+
+/* BOTTOM */
+.bottom-nav{
+margin-top:65px;
+padding:30px 0;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-top:1px solid #ebe8e9
+}
+
+.bottom-nav a{
+font-weight:700;
+color:#dd829d
+}
+
+.bottom-nav span{
+color:#aaa5aa;
+font-size:13px
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.fairy-page{padding:25px}
+.fairy-hero{height:480px}
+.fairy-hero h1{font-size:50px}
+.fairy-hero-copy{left:35px}
+.project-intro{grid-template-columns:1fr;gap:30px}
+.model-gallery{grid-template-columns:1fr 1fr}
+.model-card.large{grid-column:1/-1;height:400px}
+.process-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+.fairy-page{padding:18px}
+.fairy-hero{height:500px}
+.fairy-hero-copy{left:25px;right:25px}
+.fairy-hero h1{font-size:42px}
+.fairy-hero p{max-width:270px;font-size:15px}
+.hero-image{object-position:58% center}
+.hero-overlay{background:linear-gradient(90deg,rgba(37,28,28,.9),rgba(50,35,40,.4))}
+.project-intro{padding:45px 5px}
+.model-gallery{grid-template-columns:1fr}
+.model-card,.model-card.large{grid-column:auto;height:280px}
+.process{padding:25px}
+.bottom-nav{align-items:flex-start;flex-direction:column;gap:15px}
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="fairy-page">
+<div class="fairy-container">
+
+
+<!-- TOP -->
+<header class="fairy-top">
+
+<a href="index.html" class="fairy-brand">
+<span class="brand-pink">LUNAR</span>
+<span class="brand-green">BLOOM</span>
+</a>
+
+<a href="projects.html" class="back-projects">
+← All Projects
+</a>
+
+</header>
+
+
+<!-- HERO -->
+<section class="fairy-hero">
+
+<img
+src="fairy-props-hero.png"
+alt="Fairy Props fantasy doorway"
+class="hero-image"
+>
+
+<div class="hero-overlay"></div>
+
+<div class="fairy-hero-copy">
+
+<span class="fairy-label">
+3D PROP COLLECTION
+</span>
+
+<h1>
+Fairy<br>
+Props
+</h1>
+
+<p>
+A collection of stylized fantasy props,
+architecture and decorative assets inspired
+by enchanted gardens and little worlds.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="project-intro">
+
+<div>
+
+<h2>About the project</h2>
+
+<p>
+Fairy Props is a collection of stylized fantasy assets
+focused on decorative architecture, natural details and
+whimsical environment design. The collection combines
+stone, wood, foliage, flowers and warm lighting to create
+props that can help bring magical environments to life.
+</p>
+
+</div>
+
+
+<div class="project-details">
+
+<div class="detail">
+<span>Project Type</span>
+<strong>3D Prop Collection</strong>
+</div>
+
+<div class="detail">
+<span>Software</span>
+<strong>Blender</strong>
+</div>
+
+<div class="detail">
+<span>Skills</span>
+<strong>Modeling · Texturing · Prop Design</strong>
+</div>
+
+<div class="detail">
+<span>Style</span>
+<strong>Stylized Fantasy</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SELECTED MODELS -->
+<section>
+
+<div class="models-title">
+
+<h2>Selected Models</h2>
+
+<p>
+A closer look at individual props and environment assets.
+</p>
+
+</div>
+
+
+<div class="model-gallery">
+
+<div class="model-card">
+
+<div class="model-placeholder">
+<b>♧</b>
+<span>ARCHITECTURE MODEL</span>
+</div>
+
+</div>
+
+
+<div class="model-card">
+
+<div class="model-placeholder">
+<b>✿</b>
+<span>NATURE PROP</span>
+</div>
+
+</div>
+
+
+<div class="model-card">
+
+<div class="model-placeholder">
+<b>◇</b>
+<span>DECORATIVE PROP</span>
+</div>
+
+</div>
+
+
+<div class="model-card large">
+
+<div class="model-placeholder">
+<b>✦</b>
+<span>FULL PROP SHOWCASE</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+<section class="process">
+
+<h2>Creating the Props</h2>
+
+<div class="process-grid">
+
+<div class="process-step">
+
+<span class="step-number">1</span>
+
+<h3>Concept &amp; Blockout</h3>
+
+<p>
+Planning the silhouette, proportions and
+overall fantasy style of each asset.
+</p>
+
+</div>
+
+
+<div class="process-step">
+
+<span class="step-number">2</span>
+
+<h3>Modeling</h3>
+
+<p>
+Building the stone, wood, foliage and
+decorative details of the models.
+</p>
+
+</div>
+
+
+<div class="process-step">
+
+<span class="step-number">3</span>
+
+<h3>Texturing &amp; Polish</h3>
+
+<p>
+Adding materials, colour, flowers and lighting
+to create the final stylized presentation.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOTTOM -->
+<footer class="bottom-nav">
+
+<a href="projects.html">
+← Back to all projects
+</a>
+
+<span>
+Fairy Props · 3D Prop Collection
+</span>
+
+<a href="projects.html">
+More Projects →
+</a>
+
+</footer>
+
+
+</div>
+</div>
+
+</body>
+
+</html>
+
+<!-- ===== COMPLETE FAIRY-PROPS.HTML - END ===== -->
