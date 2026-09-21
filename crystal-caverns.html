@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crystal Caverns | 3D Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.crystal-page{min-height:100vh;padding:45px;background:#faf9fb;color:#595660}
+.crystal-container{max-width:1250px;margin:auto}
+
+/* TOP */
+.crystal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:42px}
+.crystal-brand{font-size:22px;font-weight:800;line-height:19px}
+.crystal-brand span{display:block}
+.brand-a{color:#ff9db8}.brand-b{color:#bad477}
+.back-projects{padding:12px 21px;border-radius:25px;background:#fff;color:#68646e;font-weight:700;box-shadow:0 7px 25px rgba(70,50,80,.07);transition:.2s}
+.back-projects:hover{transform:translateY(-2px);color:#b26fc1}
+
+/* HERO */
+.crystal-hero{position:relative;min-height:500px;overflow:hidden;border-radius:38px;background:linear-gradient(145deg,#5c5268,#9d739b 45%,#d39bc4);box-shadow:0 15px 40px rgba(75,50,90,.15)}
+.crystal-hero-copy{position:absolute;z-index:5;left:50px;top:50px;color:#fff}
+.crystal-label{display:inline-block;margin-bottom:15px;padding:8px 14px;border:1px solid rgba(255,255,255,.4);border-radius:20px;background:rgba(255,255,255,.1);font-size:12px;font-weight:800;letter-spacing:1px}
+.crystal-hero h1{font-size:64px;font-weight:500;line-height:1;margin-bottom:12px}
+.crystal-hero p{font-size:17px;opacity:.9}
+
+/* CRYSTAL ART */
+.crystal-scene{position:absolute;inset:0}
+.glow{position:absolute;width:380px;height:380px;right:100px;bottom:-100px;border-radius:50%;background:rgba(245,174,255,.22);filter:blur(25px)}
+.big-crystal{position:absolute;bottom:55px;background:linear-gradient(135deg,#fff0ff,#efa4ff 45%,#a95ac6);clip-path:polygon(50% 0,100% 38%,78% 100%,20% 100%,0 38%);filter:drop-shadow(0 12px 14px rgba(40,20,60,.25))}
+.bc1{right:185px;width:130px;height:300px}
+.bc2{right:65px;width:100px;height:215px;transform:rotate(9deg)}
+.bc3{right:315px;width:90px;height:195px;transform:rotate(-12deg)}
+.bc4{right:410px;width:60px;height:130px;transform:rotate(-20deg)}
+.sparkle{position:absolute;color:#fff;font-size:28px;opacity:.8}
+.s1{right:90px;top:80px}.s2{right:350px;top:125px}.s3{right:470px;bottom:85px}.s4{right:245px;top:45px}
+
+/* INTRO */
+.project-intro{display:grid;grid-template-columns:2fr 1fr;gap:60px;padding:65px 15px}
+.project-intro h2,.renders-title h2{margin-bottom:15px;font-size:27px}
+.project-intro p{color:#8d8993;line-height:1.8;font-size:15px}
+.project-details{padding:25px;border-radius:20px;background:#fff;box-shadow:0 8px 28px rgba(70,50,80,.06)}
+.detail{padding:12px 0;border-bottom:1px solid #f0edf1}
+.detail:last-child{border:0}
+.detail span,.detail strong{display:block}
+.detail span{margin-bottom:3px;color:#aaa5ae;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.detail strong{font-size:14px}
+
+/* RENDERS */
+.renders-title{margin-bottom:25px}
+.renders-title p{color:#99949e;font-size:14px}
+.render-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.render{position:relative;min-height:330px;overflow:hidden;border-radius:24px;background:linear-gradient(145deg,#c5b7ca,#8f7797,#5d5664)}
+.render.large{grid-column:1/-1;min-height:440px}
+.render-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,.85)}
+.render-placeholder b{font-size:50px;margin-bottom:10px}
+.render-placeholder span{font-size:13px;font-weight:700;letter-spacing:.5px}
+.render::after{content:"";position:absolute;width:130px;height:240px;right:50px;bottom:-20px;background:linear-gradient(135deg,#ffe7ff,#d980ec,#8e4aaa);clip-path:polygon(50% 0,100% 35%,80% 100%,20% 100%,0 35%);opacity:.45}
+.render:nth-child(2)::after{right:auto;left:45px;transform:rotate(-12deg)}
+.render.large::after{width:180px;height:350px;right:140px;opacity:.4}
+
+/* PROCESS */
+.process{margin-top:65px;padding:40px;border-radius:28px;background:#fff;box-shadow:0 8px 28px rgba(70,50,80,.05)}
+.process h2{margin-bottom:30px;font-size:27px}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.process-step{position:relative;padding-left:48px}
+.step-number{position:absolute;left:0;top:0;width:35px;height:35px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#f5e8f7;color:#a66ab2;font-weight:800}
+.process-step h3{margin-bottom:6px;font-size:15px}
+.process-step p{color:#99949e;font-size:13px;line-height:1.6}
+
+/* NEXT */
+.bottom-nav{margin-top:65px;padding:30px 0;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ebe8ec}
+.bottom-nav a{font-weight:700;color:#a66ab2}
+.bottom-nav span{color:#aaa5ae;font-size:13px}
+
+@media(max-width:850px){
+.crystal-page{padding:25px}
+.crystal-hero{min-height:520px}
+.crystal-hero h1{font-size:50px}
+.crystal-hero-copy{left:35px;top:35px}
+.crystal-scene{opacity:.6;transform:translate(100px,100px)}
+.project-intro{grid-template-columns:1fr;gap:30px}
+.process-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+.crystal-page{padding:18px}
+.crystal-hero{min-height:540px}
+.crystal-hero-copy{left:25px;top:30px}
+.crystal-hero h1{font-size:42px}
+.crystal-hero p{max-width:250px}
+.render-grid{grid-template-columns:1fr}
+.render.large{grid-column:auto}
+.render,.render.large{min-height:280px}
+.project-intro{padding:45px 5px}
+.process{padding:25px}
+.bottom-nav{align-items:flex-start;flex-direction:column;gap:15px}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="crystal-page">
+
+<div class="crystal-container">
+
+<!-- TOP -->
+<header class="crystal-top">
+
+<a href="index.html" class="crystal-brand">
+<span class="brand-a">LUNAR</span>
+<span class="brand-b">BLOOM</span>
+</a>
+
+<a href="projects.html" class="back-projects">
+← All Projects
+</a>
+
+</header>
+
+
+<!-- HERO -->
+<section class="crystal-hero">
+
+<div class="crystal-hero-copy">
+
+<span class="crystal-label">
+3D ENVIRONMENT
+</span>
+
+<h1>
+Crystal<br>
+Caverns
+</h1>
+
+<p>
+A magical underground world filled with<br>
+glowing crystals and mysterious formations.
+</p>
+
+</div>
+
+<div class="crystal-scene">
+
+<div class="glow"></div>
+
+<span class="big-crystal bc1"></span>
+<span class="big-crystal bc2"></span>
+<span class="big-crystal bc3"></span>
+<span class="big-crystal bc4"></span>
+
+<span class="sparkle s1">✦</span>
+<span class="sparkle s2">✧</span>
+<span class="sparkle s3">✦</span>
+<span class="sparkle s4">✧</span>
+
+</div>
+
+</section>
+
+
+<!-- PROJECT DESCRIPTION -->
+<section class="project-intro">
+
+<div>
+
+<h2>About the project</h2>
+
+<p>
+Crystal Caverns is a stylized fantasy environment focused
+on creating an atmospheric underground world through
+environment modeling, lighting and crystal formations.
+The project explores shape language, composition and
+colour to create a mysterious but inviting environment.
+</p>
+
+</div>
+
+
+<div class="project-details">
+
+<div class="detail">
+<span>Project Type</span>
+<strong>3D Environment</strong>
+</div>
+
+<div class="detail">
+<span>Software</span>
+<strong>Blender</strong>
+</div>
+
+<div class="detail">
+<span>Skills</span>
+<strong>Modeling · Texturing · Lighting</strong>
+</div>
+
+<div class="detail">
+<span>Style</span>
+<strong>Stylized Fantasy</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RENDERS -->
+<section>
+
+<div class="renders-title">
+
+<h2>Selected Renders</h2>
+
+<p>
+Final renders and details from the environment.
+</p>
+
+</div>
+
+
+<div class="render-grid">
+
+<div class="render">
+
+<div class="render-placeholder">
+<b>◇</b>
+<span>MAIN ENVIRONMENT RENDER</span>
+</div>
+
+</div>
+
+
+<div class="render">
+
+<div class="render-placeholder">
+<b>◇</b>
+<span>CRYSTAL DETAIL RENDER</span>
+</div>
+
+</div>
+
+
+<div class="render large">
+
+<div class="render-placeholder">
+<b>◇</b>
+<span>WIDE ENVIRONMENT RENDER</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+<section class="process">
+
+<h2>Creating the Caverns</h2>
+
+<div class="process-grid">
+
+<div class="process-step">
+
+<span class="step-number">1</span>
+
+<h3>Blockout</h3>
+
+<p>
+Planning the cavern layout, scale and main
+environment shapes.
+</p>
+
+</div>
+
+
+<div class="process-step">
+
+<span class="step-number">2</span>
+
+<h3>Modeling</h3>
+
+<p>
+Building the rock formations, crystals and
+environment assets.
+</p>
+
+</div>
+
+
+<div class="process-step">
+
+<span class="step-number">3</span>
+
+<h3>Lighting &amp; Polish</h3>
+
+<p>
+Creating the final atmosphere with lighting,
+materials and composition.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOTTOM -->
+<footer class="bottom-nav">
+
+<a href="projects.html">
+← Back to all projects
+</a>
+
+<span>
+Crystal Caverns · 3D Environment
+</span>
+
+<a href="#">
+Next Project →
+</a>
+
+</footer>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+<!-- ===== COMPLETE CRYSTAL-CAVERNS.HTML - END ===== -->
