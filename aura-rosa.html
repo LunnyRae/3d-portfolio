@@ -1,1 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aura Rosa | 3D Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.aura-page{min-height:100vh;padding:45px;background:#faf9f6;color:#59585d}
+.aura-container{max-width:1250px;margin:auto}
+
+/* TOP */
+.aura-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:42px}
+.aura-brand{font-size:22px;font-weight:800;line-height:19px}
+.aura-brand span{display:block}
+.brand-pink{color:#ff9db8}
+.brand-green{color:#bad477}
+
+.back-projects{padding:12px 21px;border-radius:25px;background:#fff;color:#68666d;font-weight:700;box-shadow:0 7px 25px rgba(70,50,60,.07);transition:.2s}
+.back-projects:hover{transform:translateY(-2px);color:#9aaa68}
+
+/* HERO */
+.aura-hero{position:relative;height:520px;overflow:hidden;border-radius:38px;background:#665f50;box-shadow:0 15px 40px rgba(70,55,40,.13)}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(28,27,22,.88) 0%,rgba(38,34,26,.63) 27%,rgba(40,36,27,.2) 53%,rgba(25,23,18,.02) 80%)}
+.aura-hero-copy{position:absolute;z-index:5;left:50px;top:50%;transform:translateY(-50%);color:#fff}
+.aura-label{display:inline-block;margin-bottom:15px;padding:8px 14px;border:1px solid rgba(255,255,255,.45);border-radius:20px;background:rgba(255,255,255,.13);backdrop-filter:blur(5px);font-size:12px;font-weight:800;letter-spacing:1px}
+.aura-hero h1{margin-bottom:15px;font-size:64px;font-weight:500;line-height:1}
+.aura-hero p{max-width:410px;font-size:17px;line-height:1.6;opacity:.95}
+
+/* ABOUT */
+.project-intro{display:grid;grid-template-columns:2fr 1fr;gap:60px;padding:65px 15px}
+.project-intro h2,.renders-title h2{margin-bottom:15px;font-size:27px}
+.project-intro p{color:#8d8991;line-height:1.8;font-size:15px}
+
+.project-details{padding:25px;border-radius:20px;background:#fff;box-shadow:0 8px 28px rgba(70,50,60,.06)}
+.detail{padding:12px 0;border-bottom:1px solid #f0edef}
+.detail:last-child{border:0}
+.detail span,.detail strong{display:block}
+.detail span{margin-bottom:3px;color:#aaa5aa;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.detail strong{font-size:14px}
+
+/* RENDERS */
+.renders-title{margin-bottom:25px}
+.renders-title p{color:#99959b;font-size:14px}
+
+.render-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+.render-card{position:relative;height:300px;overflow:hidden;border-radius:24px;background:#756e5c;box-shadow:0 10px 30px rgba(70,55,40,.08);transition:.25s}
+
+.render-card:hover{transform:translateY(-5px);box-shadow:0 16px 35px rgba(70,55,40,.15)}
+
+.render-card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease,filter .45s ease}
+
+.render-card:hover img{transform:scale(1.035);filter:brightness(1.04)}
+
+.render-wide{grid-column:1/-1;height:500px}
+
+.render-caption{position:absolute;left:18px;bottom:18px;z-index:3;padding:8px 13px;border-radius:20px;background:rgba(35,30,23,.7);backdrop-filter:blur(7px);color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;opacity:0;transform:translateY(5px);transition:.25s}
+
+.render-card:hover .render-caption{opacity:1;transform:translateY(0)}
+
+.render-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(30,25,18,.22));pointer-events:none}
+
+/* PROCESS */
+.process{margin-top:65px;padding:40px;border-radius:28px;background:#fff;box-shadow:0 8px 28px rgba(70,50,60,.05)}
+.process h2{margin-bottom:30px;font-size:27px}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.process-step{position:relative;padding-left:48px}
+
+.step-number{position:absolute;left:0;top:0;width:35px;height:35px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#eef2df;color:#8c9f5f;font-weight:800}
+
+.process-step h3{margin-bottom:6px;font-size:15px}
+.process-step p{color:#99959b;font-size:13px;line-height:1.6}
+
+/* BOTTOM */
+.bottom-nav{margin-top:65px;padding:30px 0;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ebe8e9}
+.bottom-nav a{font-weight:700;color:#91a360}
+.bottom-nav span{color:#aaa5aa;font-size:13px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.aura-page{padding:25px}
+.aura-hero{height:480px}
+.aura-hero h1{font-size:50px}
+.aura-hero-copy{left:35px}
+.project-intro{grid-template-columns:1fr;gap:30px}
+.render-gallery{grid-template-columns:1fr 1fr}
+.render-wide{grid-column:1/-1;height:400px}
+.process-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:600px){
+.aura-page{padding:18px}
+.aura-hero{height:500px}
+.aura-hero-copy{left:25px;right:25px}
+.aura-hero h1{font-size:42px}
+.aura-hero p{max-width:270px;font-size:15px}
+.hero-image{object-position:58% center}
+.hero-overlay{background:linear-gradient(90deg,rgba(28,27,22,.92),rgba(38,34,26,.4))}
+.project-intro{padding:45px 5px}
+.render-gallery{grid-template-columns:1fr}
+.render-card,.render-wide{grid-column:auto;height:280px}
+.process{padding:25px}
+.bottom-nav{align-items:flex-start;flex-direction:column;gap:15px}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="aura-page">
+<div class="aura-container">
+
+<!-- TOP -->
+<header class="aura-top">
+
+<a href="index.html" class="aura-brand">
+<span class="brand-pink">LUNAR</span>
+<span class="brand-green">BLOOM</span>
+</a>
+
+<a href="projects.html" class="back-projects">
+← All Projects
+</a>
+
+</header>
+
+
+<!-- HERO -->
+<section class="aura-hero">
+
+<img
+src="aura-rosa-hero.png"
+alt="Aura Rosa fantasy countryside environment"
+class="hero-image"
+>
+
+<div class="hero-overlay"></div>
+
+<div class="aura-hero-copy">
+
+<span class="aura-label">
+3D ENVIRONMENT
+</span>
+
+<h1>
+Aura<br>
+Rosa
+</h1>
+
+<p>
+A peaceful countryside environment filled
+with rustic architecture, nature and
+hand-crafted environmental details.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="project-intro">
+
+<div>
+
+<h2>About the project</h2>
+
+<p>
+Aura Rosa is a stylized countryside environment built
+around a rustic timber-framed home and its surrounding
+landscape. The environment combines architecture, nature,
+farming elements and smaller environmental details to
+create a warm and lived-in fantasy setting.
+</p>
+
+</div>
+
+
+<div class="project-details">
+
+<div class="detail">
+<span>Project Type</span>
+<strong>3D Environment</strong>
+</div>
+
+<div class="detail">
+<span>Software</span>
+<strong>Blender</strong>
+</div>
+
+<div class="detail">
+<span>Skills</span>
+<strong>Modeling · Environment Design · Lighting</strong>
+</div>
+
+<div class="detail">
+<span>Style</span>
+<strong>Stylized Countryside</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SELECTED RENDERS -->
+<section>
+
+<div class="renders-title">
+
+<h2>Selected Renders</h2>
+
+<p>
+A closer look at the different areas and environmental details of Aura Rosa.
+</p>
+
+</div>
+
+
+<div class="render-gallery">
+
+<!-- WINDMILL -->
+<div class="render-card">
+
+<img
+src="aura-rosa-windmill.png"
+alt="Aura Rosa windmill and farm"
+>
+
+<span class="render-caption">
+WINDMILL &amp; FARM
+</span>
+
+</div>
+
+
+<!-- STABLES -->
+<div class="render-card">
+
+<img
+src="aura-rosa-stables.png"
+alt="Aura Rosa horse stables and campfire"
+>
+
+<span class="render-caption">
+STABLES
+</span>
+
+</div>
+
+
+<!-- WATERWHEEL -->
+<div class="render-card">
+
+<img
+src="aura-rosa-waterwheel.png"
+alt="Aura Rosa wooden waterwheel"
+>
+
+<span class="render-caption">
+WATERWHEEL
+</span>
+
+</div>
+
+
+<!-- WIDE ENVIRONMENT -->
+<div class="render-card render-wide">
+
+<img
+src="aura-rosa-hero.png"
+alt="Wide view of Aura Rosa"
+>
+
+<span class="render-caption">
+FULL ENVIRONMENT
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+<section class="process">
+
+<h2>Creating Aura Rosa</h2>
+
+<div class="process-grid">
+
+<div class="process-step">
+
+<span class="step-number">1</span>
+
+<h3>Layout &amp; Blockout</h3>
+
+<p>
+Planning the house, pathways and surrounding
+environment to establish the overall composition.
+</p>
+
+</div>
+
+
+<div class="process-step">
+
+<span class="step-number">2</span>
+
+<h3>Environment Building</h3>
+
+<p>
+Creating the architecture, windmill, farm,
+stables, waterwheel and natural environment.
+</p>
+
+</div>
+
+
+<div class="process-step">
+
+<span class="step-number">3</span>
+
+<h3>Lighting &amp; Polish</h3>
+
+<p>
+Balancing warm daylight, vegetation and
+environment details for the final presentation.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOTTOM -->
+<footer class="bottom-nav">
+
+<a href="projects.html">
+← Back to all projects
+</a>
+
+<span>
+Aura Rosa · 3D Environment
+</span>
+
+<a href="projects.html">
+More Projects →
+</a>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>
+
+<!-- ===== COMPLETE AURA-ROSA.HTML - END ===== -->
