@@ -4,481 +4,563 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lunive Rae | 3D Artist</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>Lunar Bloom | 3D Artist</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="website">
+<div class="portfolio-app">
 
-        <!-- LEFT SIDEBAR -->
-        <aside class="sidebar">
+    <!-- =========================
+         LEFT SIDEBAR
+    ========================== -->
+    <aside class="sidebar">
 
-            <div class="logo">
-                <span>LUNIVE</span>
-                <span>RAE</span>
-            </div>
+        <div class="logo">
+            <span class="logo-pink">LUNAR</span>
+            <span class="logo-green">BLOOM</span>
+        </div>
 
-            <div class="sidebar-title">
-                ✿ PORTFOLIO
-            </div>
+        <div class="active-project">
+            <span class="grid-icon">▦</span>
+            <span>AURA ROSA</span>
+        </div>
 
-            <nav class="navigation">
+        <nav class="sidebar-nav">
 
-                <a href="index.html" class="nav-item active">
-                    <span class="nav-icon">⌂</span>
-                    <span>Home</span>
-                </a>
+            <a href="#home" class="nav-link active">
+                <span class="nav-icon">⌂</span>
+                <span>Home</span>
+            </a>
 
-                <a href="about.html" class="nav-item">
-                    <span class="nav-icon">♙</span>
-                    <span>About Me</span>
-                </a>
+            <a href="#about" class="nav-link">
+                <span class="nav-icon">●</span>
+                <span>About</span>
+            </a>
 
-                <a href="projects.html" class="nav-item">
-                    <span class="nav-icon">✦</span>
-                    <span>My Projects</span>
-                </a>
+            <a href="#contact" class="nav-link">
+                <span class="nav-icon">♣</span>
+                <span>Contact</span>
+            </a>
 
-                <a href="skills.html" class="nav-item">
-                    <span class="nav-icon">◇</span>
-                    <span>Skills</span>
-                </a>
+            <a href="#projects" class="nav-link">
+                <span class="nav-icon">▣</span>
+                <span>Project Pages</span>
+            </a>
 
-                <a href="contact.html" class="nav-item">
-                    <span class="nav-icon">♡</span>
-                    <span>Contact</span>
-                </a>
+            <button class="nav-link nav-button" id="settingsButton">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </button>
 
-            </nav>
+        </nav>
 
-            <div class="sidebar-bottom">
-                <div class="small-line"></div>
+        <div class="sidebar-divider"></div>
 
-                <a href="contact.html" class="nav-item">
-                    <span class="nav-icon">✉</span>
-                    <span>Let's Connect</span>
-                </a>
-            </div>
+        <div class="sidebar-bottom">
 
-        </aside>
+            <button class="nav-link nav-button">
+                <span class="nav-icon">●</span>
+                <span>My Account</span>
+            </button>
 
+            <button class="nav-link nav-button">
+                <span class="nav-icon">↪</span>
+                <span>Sign Out</span>
+            </button>
 
-        <!-- MAIN CONTENT -->
-        <main class="main-content">
+        </div>
 
-            <!-- HERO -->
-            <section class="hero">
+        <div class="help-link">
+            <span>?</span>
+            <strong>Help</strong>
+            <button>•••</button>
+        </div>
 
-                <div class="hero-text">
+    </aside>
 
-                    <p class="small-heading">
-                        HELLO, I'M A 3D ARTIST ♡
-                    </p>
 
-                    <h1>
-                        Creating little<br>
-                        <span>worlds in 3D</span>
-                    </h1>
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="main-content" id="home">
 
-                    <p class="hero-description">
-                        3D Modeler & Builder creating detailed models,
-                        environments and imaginative little worlds.
-                    </p>
+        <!-- SEARCH BAR -->
+        <header class="topbar">
 
-                    <div class="hero-buttons">
+            <div class="search-container">
+                <span class="search-icon">⌕</span>
 
-                        <a href="projects.html" class="button primary">
-                            View My Work →
-                        </a>
-
-                        <a href="about.html" class="button secondary">
-                            About Me
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- 3D ARTWORK PLACEHOLDER -->
-                <div class="hero-art">
-
-                    <div class="art-decoration flower-one">
-                        ✿
-                    </div>
-
-                    <div class="art-decoration flower-two">
-                        ✿
-                    </div>
-
-                    <div class="art-placeholder">
-                        <span>LUNIVE</span>
-                        <span>3D ARTWORK</span>
-                    </div>
-
-                    <div class="sparkle sparkle-one">
-                        ✦
-                    </div>
-
-                    <div class="sparkle sparkle-two">
-                        ✧
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- SELECTED WORK -->
-            <section class="section">
-
-                <div class="section-heading">
-
-                    <div>
-                        <p class="eyebrow">
-                            A LITTLE LOOK
-                        </p>
-
-                        <h2>
-                            Selected Work
-                        </h2>
-                    </div>
-
-                    <a href="projects.html" class="view-all">
-                        View All →
-                    </a>
-
-                </div>
-
-
-                <div class="project-grid">
-
-                    <a href="projects.html" class="project-card">
-
-                        <div class="project-image project-pink">
-                            <span>3D MODEL</span>
-                        </div>
-
-                        <div class="project-info">
-
-                            <div>
-                                <h3>Project One</h3>
-                                <p>3D Model</p>
-                            </div>
-
-                            <span class="arrow">
-                                →
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <a href="projects.html" class="project-card">
-
-                        <div class="project-image project-green">
-                            <span>3D ENVIRONMENT</span>
-                        </div>
-
-                        <div class="project-info">
-
-                            <div>
-                                <h3>Project Two</h3>
-                                <p>Environment</p>
-                            </div>
-
-                            <span class="arrow">
-                                →
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <a href="projects.html" class="project-card">
-
-                        <div class="project-image project-lilac">
-                            <span>3D BUILD</span>
-                        </div>
-
-                        <div class="project-info">
-
-                            <div>
-                                <h3>Project Three</h3>
-                                <p>Building</p>
-                            </div>
-
-                            <span class="arrow">
-                                →
-                            </span>
-
-                        </div>
-
-                    </a>
-
-                </div>
-
-            </section>
-
-
-            <!-- ABOUT + SKILLS -->
-            <section class="info-grid">
-
-                <a href="about.html" class="info-card">
-
-                    <div class="info-icon pink-icon">
-                        ♡
-                    </div>
-
-                    <div>
-
-                        <p class="eyebrow">
-                            A LITTLE ABOUT ME
-                        </p>
-
-                        <h2>
-                            About Me
-                        </h2>
-
-                        <p>
-                            I create detailed 3D models, builds and
-                            imaginative environments.
-                        </p>
-
-                    </div>
-
-                    <span class="card-arrow">
-                        →
-                    </span>
-
-                </a>
-
-
-                <a href="skills.html" class="info-card">
-
-                    <div class="info-icon green-icon">
-                        ◇
-                    </div>
-
-                    <div>
-
-                        <p class="eyebrow">
-                            WHAT I DO
-                        </p>
-
-                        <h2>
-                            My Skills
-                        </h2>
-
-                        <p>
-                            3D Modeling · Building · Texturing ·
-                            Environment Design
-                        </p>
-
-                    </div>
-
-                    <span class="card-arrow">
-                        →
-                    </span>
-
-                </a>
-
-            </section>
-
-        </main>
-
-
-        <!-- RIGHT SIDEBAR -->
-        <aside class="right-sidebar">
-
-            <!-- PROFILE -->
-            <div class="profile">
-
-                <img
-                    src="lunnyrae.jpg"
-                    alt="Lunive Rae profile picture"
-                    class="profile-picture"
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search Here"
                 >
+            </div>
 
-                <h3>
-                    Lunive Rae
-                </h3>
+            <div class="top-buttons">
+
+                <button class="square-button" aria-label="Messages">
+                    ♡
+                </button>
+
+                <button class="square-button" aria-label="Notifications">
+                    ♧
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <h1>
+                    Creating<br>
+                    little worlds in 3D
+                </h1>
 
                 <p>
-                    ╭ • Lunae .ᐟ ♡
+                    Environment artist &amp; 3D modeller
                 </p>
 
-                <div class="socials">
-                    <span>◎</span>
-                    <span>𝕏</span>
-                    <span>◈</span>
-                </div>
+                <div class="hero-buttons">
 
-            </div>
+                    <a href="#projects" class="button button-white">
+                        View my work
+                    </a>
 
-
-            <!-- COLOUR PALETTE -->
-            <div class="palette-section">
-
-                <p class="eyebrow">
-                    MY COLOURS
-                </p>
-
-                <div class="palette">
-
-                    <span class="sage"></span>
-                    <span class="pink"></span>
-                    <span class="cream"></span>
+                    <a href="#about" class="button button-outline">
+                        About me
+                    </a>
 
                 </div>
 
             </div>
 
 
-            <!-- ARTIST INFO -->
-            <div class="artist-info">
+            <div class="hero-art">
 
-                <p class="eyebrow">
-                    WHAT I CREATE
-                </p>
+                <div class="hero-circle hero-circle-one"></div>
+                <div class="hero-circle hero-circle-two"></div>
 
-                <h2>
-                    3D Artist
-                </h2>
+                <div class="placeholder-house">
 
-                <p>
-                    Models · Builds · Environments ·
-                    Little Worlds
-                </p>
+                    <div class="house-roof"></div>
 
-            </div>
+                    <div class="house-body">
 
+                        <div class="house-window"></div>
 
-            <!-- FEATURED PROJECTS -->
-            <div class="featured">
+                        <div class="house-door"></div>
 
-                <div class="section-heading-small">
-
-                    <h3>
-                        Featured Projects
-                    </h3>
-
-                    <span>
-                        ✦
-                    </span>
+                    </div>
 
                 </div>
 
+                <div class="flower flower-one">✿</div>
+                <div class="flower flower-two">✿</div>
+                <div class="flower flower-three">✿</div>
+                <div class="flower flower-four">✿</div>
 
-                <a href="projects.html" class="featured-project">
+            </div>
 
-                    <div class="mini-image pink-mini">
-                        ✿
-                    </div>
-
-                    <div>
-                        <strong>
-                            Project One
-                        </strong>
-
-                        <small>
-                            3D Model
-                        </small>
-                    </div>
-
-                    <span>
-                        →
-                    </span>
-
-                </a>
+        </section>
 
 
-                <a href="projects.html" class="featured-project">
-
-                    <div class="mini-image green-mini">
-                        ◇
-                    </div>
-
-                    <div>
-                        <strong>
-                            Project Two
-                        </strong>
-
-                        <small>
-                            Environment
-                        </small>
-                    </div>
-
-                    <span>
-                        →
-                    </span>
-
-                </a>
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
 
 
-                <a href="projects.html" class="featured-project">
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+        <section class="projects-section" id="projects">
 
-                    <div class="mini-image lilac-mini">
-                        ✦
-                    </div>
+            <div class="section-heading">
 
-                    <div>
-                        <strong>
-                            Project Three
-                        </strong>
+                <h2>Selected Work</h2>
 
-                        <small>
-                            3D Build
-                        </small>
-                    </div>
-
-                    <span>
-                        →
-                    </span>
-
-                </a>
+                <button class="view-all" id="viewAllButton">
+                    View All →
+                </button>
 
             </div>
 
 
-            <!-- CONTACT CARD -->
-            <a href="contact.html" class="contact-card">
+            <div class="project-grid" id="projectGrid">
+
+                <!-- PROJECT 1 -->
+                <article class="project-card">
+
+                    <div class="project-image floral-project">
+
+                        <div class="mini-house">
+                            <div class="mini-roof"></div>
+                            <div class="mini-body"></div>
+                        </div>
+
+                        <span class="decor flower-a">✿</span>
+                        <span class="decor flower-b">✿</span>
+                        <span class="decor flower-c">✿</span>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <h3>Floral Doorway</h3>
+
+                        <button class="more-button">
+                            •••
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 2 -->
+                <article class="project-card">
+
+                    <div class="project-image crystal-project">
+
+                        <div class="crystal crystal-one"></div>
+                        <div class="crystal crystal-two"></div>
+                        <div class="crystal crystal-three"></div>
+                        <div class="crystal crystal-four"></div>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <h3>Crystal Caverns</h3>
+
+                        <button class="more-button">
+                            •••
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 3 -->
+                <article class="project-card">
+
+                    <div class="project-image ruins-project">
+
+                        <div class="ruin-column column-one"></div>
+                        <div class="ruin-column column-two"></div>
+                        <div class="ruin-column column-three"></div>
+
+                        <div class="ruin-arch"></div>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <h3>Overgrown Ruins</h3>
+
+                        <button class="more-button">
+                            •••
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT / SKILLS
+        ========================== -->
+        <section class="info-grid" id="about">
+
+            <article class="info-card">
+
+                <div class="info-icon">
+                    ●
+                </div>
+
+                <div class="info-text">
+
+                    <h3>About me</h3>
+
+                    <p>
+                        I create detailed models, textures
+                        and immersive spaces.
+                    </p>
+
+                </div>
+
+                <button class="info-more">
+                    •••
+                </button>
+
+            </article>
+
+
+            <article class="info-card">
+
+                <div class="info-icon cube-icon">
+                    ◇
+                </div>
+
+                <div class="info-text">
+
+                    <h3>My skills</h3>
+
+                    <p>
+                        Blender · Modeling · Texturing ·
+                        Roblox Studio
+                    </p>
+
+                </div>
+
+                <button class="info-more">
+                    •••
+                </button>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         RIGHT SIDEBAR
+    ========================== -->
+    <aside class="right-panel">
+
+        <!-- PROFILE -->
+        <section class="profile-section">
+
+            <div class="profile-header">
 
                 <div>
 
-                    <p class="eyebrow">
-                        LET'S CREATE TOGETHER
-                    </p>
+                    <h3>Lunivé Rosebloom</h3>
 
-                    <h3>
-                        Get in touch ♡
-                    </h3>
-
-                    <p>
-                        Open to creative projects,
-                        collaborations and new ideas.
-                    </p>
+                    <p>@lunarivemodels</p>
 
                 </div>
 
-                <span class="contact-arrow">
-                    →
-                </span>
+                <div class="profile-avatar">
+                    🦋
+                </div>
+
+            </div>
+
+
+            <div class="social-icons">
+
+                <a href="#" aria-label="Instagram">◎</a>
+
+                <a href="#" aria-label="X">𝕏</a>
+
+                <a href="#" aria-label="ArtStation">△</a>
+
+            </div>
+
+
+            <div class="colors-title">
+                #COLORS
+            </div>
+
+            <div class="color-palette">
+
+                <span class="green"></span>
+                <span class="pink"></span>
+                <span class="cream"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTIST TYPE -->
+        <section class="artist-section">
+
+            <div class="right-title">
+
+                <div>
+                    <h2>3D Artist</h2>
+                    <p>Models · Environments · Little Worlds</p>
+                </div>
+
+                <button>•••</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT LINKS -->
+        <section class="side-projects">
+
+            <div class="right-title">
+
+                <h2>Project Pages</h2>
+
+                <button>•••</button>
+
+            </div>
+
+
+            <button class="side-project-card">
+
+                <div class="side-thumbnail floral-thumbnail">
+                    ✿
+                </div>
+
+                <div>
+                    <strong>AURA ROSA</strong>
+                    <span>Fantasy Cottage</span>
+                </div>
+
+                <b>›</b>
+
+            </button>
+
+
+            <button class="side-project-card">
+
+                <div class="side-thumbnail crystal-thumbnail">
+                    ♦
+                </div>
+
+                <div>
+                    <strong>CRYSTAL CAVERNS</strong>
+                    <span>Environment</span>
+                </div>
+
+                <b>›</b>
+
+            </button>
+
+
+            <button class="side-project-card">
+
+                <div class="side-thumbnail ruins-thumbnail">
+                    ♜
+                </div>
+
+                <div>
+                    <strong>OVERGROWN RUINS</strong>
+                    <span>Environment</span>
+                </div>
+
+                <b>›</b>
+
+            </button>
+
+
+            <button class="side-project-card">
+
+                <div class="side-thumbnail lantern-thumbnail">
+                    ♧
+                </div>
+
+                <div>
+                    <strong>FAIRY PROPS</strong>
+                    <span>3D Models</span>
+                </div>
+
+                <b>›</b>
+
+            </button>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section class="contact-section" id="contact">
+
+            <div class="right-title">
+
+                <h2>Let's create together</h2>
+
+                <button>•••</button>
+
+            </div>
+
+
+            <a
+                class="contact-card"
+                href="mailto:hello@example.com"
+            >
+
+                <div class="mail-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <strong>Get in touch</strong>
+
+                    <span>
+                        Open to freelance work,<br>
+                        collaborations and<br>
+                        creative projects.
+                    </span>
+
+                </div>
+
+                <b>→</b>
 
             </a>
 
-        </aside>
+        </section>
+
+    </aside>
+
+</div>
+
+
+<!-- =========================
+     SETTINGS POPUP
+========================== -->
+<div class="modal-overlay" id="settingsModal">
+
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            id="closeSettings"
+        >
+            ×
+        </button>
+
+        <h2>Settings</h2>
+
+        <p>
+            Portfolio settings will appear here.
+        </p>
 
     </div>
+
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
