@@ -15,8 +15,7 @@
 
 <style>
 
-/* REAL HOMEPAGE PROJECT IMAGES */
-
+/* REAL HOMEPAGE PROJECTS */
 .home-project{
 display:block;
 overflow:hidden;
@@ -55,11 +54,7 @@ filter:brightness(1.04)
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(
-180deg,
-transparent 60%,
-rgba(25,15,30,.16)
-);
+background:linear-gradient(180deg,transparent 60%,rgba(25,15,30,.16));
 pointer-events:none
 }
 
@@ -95,20 +90,33 @@ color:#fff;
 transform:translateX(2px)
 }
 
-@media(max-width:850px){
-
-.home-project-image{
-height:240px
+/* PROFILE PICTURE */
+.avatar{
+width:72px;
+height:72px;
+padding:3px;
+overflow:hidden;
+border:2px solid #ffd4de;
+border-radius:50%;
+background:#fff;
+box-shadow:0 6px 18px rgba(70,50,60,.07)
 }
 
+.avatar img{
+width:100%;
+height:100%;
+display:block;
+object-fit:cover;
+object-position:center;
+border-radius:50%
+}
+
+@media(max-width:850px){
+.home-project-image{height:240px}
 }
 
 @media(max-width:520px){
-
-.home-project-image{
-height:210px
-}
-
+.home-project-image{height:210px}
 }
 
 </style>
@@ -121,22 +129,12 @@ height:210px
 <div class="portfolio">
 
 
-<!-- =====================================
-     LEFT SIDEBAR
-===================================== -->
-
+<!-- LEFT SIDEBAR -->
 <aside class="sidebar">
 
 <div class="brand">
-
-<span class="brand-pink">
-LUNAR
-</span>
-
-<span class="brand-green">
-BLOOM
-</span>
-
+<span class="brand-pink">LUNAR</span>
+<span class="brand-green">BLOOM</span>
 </div>
 
 
@@ -156,67 +154,28 @@ AURA ROSA
 <nav class="main-nav">
 
 <a href="#home" class="nav-item">
-
-<span class="nav-icon">
-⌂
-</span>
-
-<span>
-Home
-</span>
-
+<span class="nav-icon">⌂</span>
+<span>Home</span>
 </a>
-
 
 <a href="#about" class="nav-item">
-
-<span class="nav-icon">
-●
-</span>
-
-<span>
-About
-</span>
-
+<span class="nav-icon">●</span>
+<span>About</span>
 </a>
-
 
 <a href="#contact" class="nav-item">
-
-<span class="nav-icon">
-♣
-</span>
-
-<span>
-Contact
-</span>
-
+<span class="nav-icon">♣</span>
+<span>Contact</span>
 </a>
-
 
 <a href="projects.html" class="nav-item">
-
-<span class="nav-icon">
-▣
-</span>
-
-<span>
-Project Pages
-</span>
-
+<span class="nav-icon">▣</span>
+<span>Project Pages</span>
 </a>
 
-
 <button class="nav-item" id="settingsButton">
-
-<span class="nav-icon">
-⚙
-</span>
-
-<span>
-Settings
-</span>
-
+<span class="nav-icon">⚙</span>
+<span>Settings</span>
 </button>
 
 </nav>
@@ -228,28 +187,13 @@ Settings
 <div class="account-nav">
 
 <button class="nav-item">
-
-<span class="nav-icon">
-●
-</span>
-
-<span>
-My Account
-</span>
-
+<span class="nav-icon">●</span>
+<span>My Account</span>
 </button>
 
-
 <button class="nav-item">
-
-<span class="nav-icon">
-↪
-</span>
-
-<span>
-Sign Out
-</span>
-
+<span class="nav-icon">↪</span>
+<span>Sign Out</span>
 </button>
 
 </div>
@@ -275,15 +219,11 @@ Help
 
 
 
-<!-- =====================================
-     CENTER CONTENT
-===================================== -->
-
+<!-- CENTER -->
 <main class="content" id="home">
 
 
 <!-- TOP BAR -->
-
 <header class="topbar">
 
 <div class="search">
@@ -317,12 +257,8 @@ placeholder="Search Here"
 
 
 
-<!-- =====================================
-     HERO
-===================================== -->
-
+<!-- HERO -->
 <section class="hero">
-
 
 <div class="hero-copy">
 
@@ -338,18 +274,11 @@ Environment artist &amp; 3D modeller
 
 <div class="hero-actions">
 
-<a
-href="projects.html"
-class="primary-button"
->
+<a href="projects.html" class="primary-button">
 View my work
 </a>
 
-
-<a
-href="#about"
-class="secondary-button"
->
+<a href="#about" class="secondary-button">
 About me
 </a>
 
@@ -358,13 +287,9 @@ About me
 </div>
 
 
-
-<!-- TEMPORARY HERO ART -->
-
 <div class="hero-visual">
 
 <div class="fairy-wing wing-left"></div>
-
 <div class="fairy-wing wing-right"></div>
 
 
@@ -379,7 +304,6 @@ About me
 <div class="cottage-door">
 
 <span class="door-window"></span>
-
 <span class="door-handle"></span>
 
 </div>
@@ -400,29 +324,19 @@ About me
 </section>
 
 
-
-<!-- HERO DOTS -->
-
+<!-- DOTS -->
 <div class="hero-dots">
 
 <button class="hero-dot active"></button>
-
 <button class="hero-dot"></button>
-
 <button class="hero-dot"></button>
 
 </div>
 
 
 
-<!-- =====================================
-     SELECTED WORK
-===================================== -->
-
-<section
-class="projects"
-id="projects"
->
+<!-- SELECTED WORK -->
+<section class="projects" id="projects">
 
 
 <div class="section-header">
@@ -432,11 +346,9 @@ Selected Work
 </h2>
 
 <a href="projects.html">
-
 <button id="viewAllButton">
 View All →
 </button>
-
 </a>
 
 </div>
@@ -447,7 +359,6 @@ View All →
 
 
 <!-- AURA ROSA -->
-
 <a
 href="aura-rosa.html"
 class="home-project"
@@ -462,7 +373,6 @@ alt="Aura Rosa fantasy countryside environment"
 >
 
 </div>
-
 
 <div class="home-project-info">
 
@@ -481,7 +391,6 @@ Aura Rosa
 
 
 <!-- CRYSTAL CAVERNS -->
-
 <a
 href="crystal-caverns.html"
 class="home-project"
@@ -496,7 +405,6 @@ alt="Crystal Caverns fantasy environment"
 >
 
 </div>
-
 
 <div class="home-project-info">
 
@@ -515,7 +423,6 @@ Crystal Caverns
 
 
 <!-- OVERGROWN RUINS -->
-
 <a
 href="overgrown-ruins.html"
 class="home-project"
@@ -530,7 +437,6 @@ alt="Overgrown Ruins environment"
 >
 
 </div>
-
 
 <div class="home-project-info">
 
@@ -553,14 +459,8 @@ Overgrown Ruins
 
 
 
-<!-- =====================================
-     ABOUT + SKILLS
-===================================== -->
-
-<section
-class="information"
-id="about"
->
+<!-- ABOUT -->
+<section class="information" id="about">
 
 
 <article class="information-card">
@@ -568,7 +468,6 @@ id="about"
 <div class="information-icon">
 ●
 </div>
-
 
 <div class="information-copy">
 
@@ -583,11 +482,7 @@ textures and immersive spaces.
 
 </div>
 
-
-<button
-class="card-options"
-aria-label="About options"
->
+<button class="card-options" aria-label="About options">
 •••
 </button>
 
@@ -601,7 +496,6 @@ aria-label="About options"
 ◇
 </div>
 
-
 <div class="information-copy">
 
 <h3>
@@ -609,17 +503,12 @@ My skills
 </h3>
 
 <p>
-Blender · Modeling · Texturing ·
-Roblox Studio
+Blender · Modeling · Texturing · Roblox Studio
 </p>
 
 </div>
 
-
-<button
-class="card-options"
-aria-label="Skills options"
->
+<button class="card-options" aria-label="Skills options">
 •••
 </button>
 
@@ -628,20 +517,15 @@ aria-label="Skills options"
 
 </section>
 
-
 </main>
 
 
 
-<!-- =====================================
-     RIGHT PANEL
-===================================== -->
-
+<!-- RIGHT PANEL -->
 <aside class="profile-panel">
 
 
 <!-- PROFILE -->
-
 <section class="profile">
 
 <div class="profile-top">
@@ -660,8 +544,14 @@ Lunivé Rosebloom
 </div>
 
 
+<!-- REAL PROFILE PICTURE -->
 <div class="avatar">
-🦋
+
+<img
+src="profile-picture.jpg"
+alt="Lunivé Rosebloom profile picture"
+>
+
 </div>
 
 </div>
@@ -694,9 +584,7 @@ Lunivé Rosebloom
 <div class="palette">
 
 <span class="palette-green"></span>
-
 <span class="palette-pink"></span>
-
 <span class="palette-cream"></span>
 
 </div>
@@ -706,7 +594,6 @@ Lunivé Rosebloom
 
 
 <!-- ARTIST INFO -->
-
 <section class="artist-info">
 
 <div class="panel-heading">
@@ -723,7 +610,6 @@ Models · Environments · Little Worlds
 
 </div>
 
-
 <button>
 •••
 </button>
@@ -734,10 +620,7 @@ Models · Environments · Little Worlds
 
 
 
-<!-- =====================================
-     PROJECT PAGES
-===================================== -->
-
+<!-- PROJECT PAGES -->
 <section class="project-pages">
 
 <div class="panel-heading">
@@ -754,10 +637,7 @@ View All
 
 
 
-<a
-href="aura-rosa.html"
-class="side-project"
->
+<a href="aura-rosa.html" class="side-project">
 
 <div class="side-image floral-side">
 ✿
@@ -783,10 +663,7 @@ Fantasy Countryside
 
 
 
-<a
-href="crystal-caverns.html"
-class="side-project"
->
+<a href="crystal-caverns.html" class="side-project">
 
 <div class="side-image crystal-side">
 ♦
@@ -812,10 +689,7 @@ Environment
 
 
 
-<a
-href="overgrown-ruins.html"
-class="side-project"
->
+<a href="overgrown-ruins.html" class="side-project">
 
 <div class="side-image ruins-side">
 ♜
@@ -841,10 +715,7 @@ Environment
 
 
 
-<a
-href="fairy-props.html"
-class="side-project"
->
+<a href="fairy-props.html" class="side-project">
 
 <div class="side-image props-side">
 ♧
@@ -872,14 +743,8 @@ FAIRY PROPS
 
 
 
-<!-- =====================================
-     CONTACT
-===================================== -->
-
-<section
-class="contact"
-id="contact"
->
+<!-- CONTACT -->
+<section class="contact" id="contact">
 
 <div class="panel-heading">
 
@@ -894,7 +759,6 @@ Let's create together
 </div>
 
 
-
 <a
 class="contact-box"
 href="mailto:hello@example.com"
@@ -903,7 +767,6 @@ href="mailto:hello@example.com"
 <div class="contact-icon">
 ✉
 </div>
-
 
 <div class="contact-copy">
 
@@ -918,7 +781,6 @@ creative projects.
 </span>
 
 </div>
-
 
 <span class="contact-arrow">
 →
@@ -935,10 +797,7 @@ creative projects.
 
 
 
-<!-- =====================================
-     SETTINGS POPUP
-===================================== -->
-
+<!-- SETTINGS -->
 <div
 class="settings-overlay"
 id="settingsModal"
@@ -954,11 +813,9 @@ aria-label="Close settings"
 ×
 </button>
 
-
 <h2>
 Settings
 </h2>
-
 
 <p>
 Portfolio settings will appear here.
@@ -967,7 +824,6 @@ Portfolio settings will appear here.
 </div>
 
 </div>
-
 
 
 <script src="script.js"></script>
