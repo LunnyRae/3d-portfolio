@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Me | Lunar Bloom</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:"Nunito",sans-serif;
+background:#fbfaf9;
+color:#59575f
+}
+
+a{text-decoration:none;color:inherit}
+
+.about-page{
+min-height:100vh;
+padding:45px
+}
+
+.about-container{
+max-width:1150px;
+margin:auto
+}
+
+/* TOP */
+.about-top{
+margin-bottom:42px;
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+
+.about-brand{
+font-size:22px;
+font-weight:800;
+line-height:19px
+}
+
+.about-brand span{display:block}
+.brand-pink{color:#ff9db8}
+.brand-green{color:#bad477}
+
+.back-home{
+padding:12px 21px;
+border-radius:25px;
+background:#fff;
+color:#68666d;
+font-weight:700;
+box-shadow:0 7px 25px rgba(70,50,60,.07);
+transition:.2s
+}
+
+.back-home:hover{
+transform:translateY(-2px);
+color:#ff8fac
+}
+
+/* HERO */
+.about-hero{
+position:relative;
+min-height:340px;
+padding:50px;
+display:flex;
+align-items:center;
+overflow:hidden;
+border-radius:38px;
+background:linear-gradient(120deg,#ffc4d3,#ffa6bd);
+color:#fff;
+box-shadow:0 15px 40px rgba(220,120,150,.12)
+}
+
+.about-hero:before{
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+right:-80px;
+top:-120px;
+border:2px solid rgba(255,255,255,.25);
+border-radius:50%
+}
+
+.about-hero:after{
+content:"";
+position:absolute;
+width:180px;
+height:180px;
+right:200px;
+bottom:-100px;
+border:2px solid rgba(255,255,255,.22);
+border-radius:50%
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:650px
+}
+
+.hero-label{
+display:inline-block;
+margin-bottom:13px;
+padding:7px 13px;
+border:1px solid rgba(255,255,255,.45);
+border-radius:20px;
+background:rgba(255,255,255,.12);
+font-size:11px;
+font-weight:800;
+letter-spacing:1px
+}
+
+.about-hero h1{
+margin:0 0 12px;
+font-size:55px;
+font-weight:600;
+line-height:1
+}
+
+.about-hero p{
+max-width:600px;
+margin:0;
+font-size:16px;
+line-height:1.7;
+opacity:.95
+}
+
+.hero-profile{
+position:absolute;
+z-index:2;
+right:65px;
+top:50%;
+width:155px;
+height:155px;
+padding:5px;
+transform:translateY(-50%);
+overflow:hidden;
+border:5px solid rgba(255,255,255,.85);
+border-radius:50%;
+background:#fff;
+box-shadow:0 12px 30px rgba(90,40,60,.15)
+}
+
+.hero-profile img{
+width:100%;
+height:100%;
+display:block;
+object-fit:cover;
+border-radius:50%
+}
+
+/* BIO */
+.bio{
+padding:60px 15px;
+display:grid;
+grid-template-columns:1.5fr .8fr;
+gap:55px
+}
+
+.bio h2,
+.section-title h2{
+margin:0 0 16px;
+font-size:28px
+}
+
+.bio-text p{
+margin:0 0 17px;
+color:#88858e;
+font-size:15px;
+line-height:1.85
+}
+
+.quick-info{
+padding:26px;
+align-self:start;
+border-radius:22px;
+background:#fff;
+box-shadow:0 8px 28px rgba(70,50,60,.06)
+}
+
+.info-row{
+padding:13px 0;
+border-bottom:1px solid #f0edef
+}
+
+.info-row:last-child{border:0}
+
+.info-row span,
+.info-row strong{
+display:block
+}
+
+.info-row span{
+margin-bottom:4px;
+color:#aaa5aa;
+font-size:10px;
+font-weight:800;
+letter-spacing:1px;
+text-transform:uppercase
+}
+
+.info-row strong{
+font-size:14px
+}
+
+/* WHAT I CREATE */
+.section-title{
+margin-bottom:25px
+}
+
+.section-title p{
+margin:0;
+color:#99959b;
+font-size:14px
+}
+
+.create-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
+}
+
+.create-card{
+padding:27px;
+border-radius:22px;
+background:#fff;
+box-shadow:0 8px 28px rgba(70,50,60,.05);
+transition:.25s
+}
+
+.create-card:hover{
+transform:translateY(-4px);
+box-shadow:0 14px 32px rgba(70,50,60,.09)
+}
+
+.create-icon{
+width:48px;
+height:48px;
+margin-bottom:17px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:15px;
+background:#fff0f4;
+color:#df829e;
+font-size:21px
+}
+
+.green-icon{
+background:#eff3e3;
+color:#8fa15f
+}
+
+.purple-icon{
+background:#f5eafa;
+color:#ad78b6
+}
+
+.create-card h3{
+margin:0 0 8px;
+font-size:16px
+}
+
+.create-card p{
+margin:0;
+color:#99959b;
+font-size:13px;
+line-height:1.65
+}
+
+/* APPROACH */
+.approach{
+margin-top:55px;
+padding:38px;
+border-radius:28px;
+background:linear-gradient(120deg,#f5f1df,#eef2dc)
+}
+
+.approach h2{
+margin:0 0 12px;
+font-size:27px
+}
+
+.approach p{
+max-width:850px;
+margin:0;
+color:#838278;
+font-size:14px;
+line-height:1.8
+}
+
+/* SKILLS */
+.skills-section{
+margin-top:55px
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:11px
+}
+
+.skill{
+padding:10px 16px;
+border-radius:22px;
+background:#fff;
+box-shadow:0 5px 18px rgba(70,50,60,.05);
+color:#77737c;
+font-size:12px;
+font-weight:700
+}
+
+/* LEARNING */
+.learning{
+margin-top:55px;
+padding:35px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:30px;
+border-radius:27px;
+background:#fff;
+box-shadow:0 8px 28px rgba(70,50,60,.05)
+}
+
+.learning h2{
+margin:0 0 7px;
+font-size:24px
+}
+
+.learning p{
+max-width:650px;
+margin:0;
+color:#99959b;
+font-size:13px;
+line-height:1.7
+}
+
+.learning-icon{
+font-size:45px;
+color:#bad477
+}
+
+/* AVAILABILITY */
+.availability{
+margin-top:55px;
+padding:40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:30px;
+border-radius:28px;
+background:linear-gradient(120deg,#ffdce5,#ffc5d4)
+}
+
+.availability h2{
+margin:0 0 7px;
+font-size:26px
+}
+
+.availability p{
+max-width:650px;
+margin:0;
+color:#7e6971;
+font-size:14px;
+line-height:1.7
+}
+
+.contact-button{
+padding:13px 24px;
+flex-shrink:0;
+border-radius:25px;
+background:#fff;
+color:#d97998;
+font-size:13px;
+font-weight:800;
+box-shadow:0 6px 20px rgba(100,50,70,.07);
+transition:.2s
+}
+
+.contact-button:hover{
+transform:translateX(3px)
+}
+
+/* FOOTER */
+.about-footer{
+margin-top:55px;
+padding:28px 5px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-top:1px solid #ebe8e9;
+color:#aaa5aa;
+font-size:12px
+}
+
+.about-footer a{
+color:#df829e;
+font-weight:700
+}
+
+/* RESPONSIVE */
+@media(max-width:850px){
+
+.about-page{padding:25px}
+
+.hero-profile{
+width:115px;
+height:115px;
+right:35px
+}
+
+.about-hero h1{
+font-size:45px
+}
+
+.hero-content{
+max-width:500px
+}
+
+.bio{
+grid-template-columns:1fr;
+gap:30px
+}
+
+.create-grid{
+grid-template-columns:1fr 1fr
+}
+
+}
+
+@media(max-width:600px){
+
+.about-page{padding:18px}
+
+.about-hero{
+padding:35px 25px 160px
+}
+
+.about-hero h1{
+font-size:40px
+}
+
+.hero-profile{
+width:105px;
+height:105px;
+left:25px;
+right:auto;
+top:auto;
+bottom:28px;
+transform:none
+}
+
+.bio{
+padding:45px 5px
+}
+
+.create-grid{
+grid-template-columns:1fr
+}
+
+.approach,
+.learning,
+.availability{
+padding:27px
+}
+
+.learning,
+.availability{
+align-items:flex-start;
+flex-direction:column
+}
+
+.about-footer{
+align-items:flex-start;
+flex-direction:column;
+gap:10px
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="about-page">
+<div class="about-container">
+
+
+<!-- TOP -->
+<header class="about-top">
+
+<a href="index.html" class="about-brand">
+<span class="brand-pink">LUNAR</span>
+<span class="brand-green">BLOOM</span>
+</a>
+
+<a href="index.html" class="back-home">
+← Back Home
+</a>
+
+</header>
+
+
+<!-- HERO -->
+<section class="about-hero">
+
+<div class="hero-content">
+
+<span class="hero-label">
+ABOUT THE ARTIST
+</span>
+
+<h1>
+About me
+</h1>
+
+<p>
+3D artist and modeler focused on creating imaginative
+game environments, models and worlds that are enjoyable
+to explore and play.
+</p>
+
+</div>
+
+
+<div class="hero-profile">
+
+<img
+src="profile-picture.jpg"
+alt="Lunivé Rosebloom profile picture"
+>
+
+</div>
+
+</section>
+
+
+<!-- MAIN BIO -->
+<section class="bio">
+
+<div class="bio-text">
+
+<h2>
+My story
+</h2>
+
+<p>
+I've been working with 3D modelling for around two years,
+originally getting into it through my love of games. As I
+played more games, I became increasingly interested not
+only in how their worlds were created, but also in the
+small design issues that can affect the player's experience.
+</p>
+
+<p>
+That pushed me towards creating my own work with a focus
+on building worlds that are visually interesting while
+still being enjoyable to play and explore.
+</p>
+
+<p>
+I enjoy working across different areas of 3D creation
+rather than limiting myself to one type of asset. This
+includes environments, buildings, props, maps,
+accessories and the smaller details needed to bring a
+larger world together.
+</p>
+
+<p>
+My preferred style is mid-to-low poly, where I have the
+creative freedom to experiment with shapes, environments
+and ideas while keeping assets suitable for games.
+</p>
+
+</div>
+
+
+<div class="quick-info">
+
+<div class="info-row">
+<span>Experience</span>
+<strong>2 Years</strong>
+</div>
+
+<div class="info-row">
+<span>Main Focus</span>
+<strong>3D Modeling &amp; Environments</strong>
+</div>
+
+<div class="info-row">
+<span>Preferred Style</span>
+<strong>Mid-to-Low Poly</strong>
+</div>
+
+<div class="info-row">
+<span>Software</span>
+<strong>Blender · Roblox Studio</strong>
+</div>
+
+<div class="info-row">
+<span>Availability</span>
+<strong>Freelance &amp; Commissions</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHAT I CREATE -->
+<section>
+
+<div class="section-title">
+
+<h2>
+What I create
+</h2>
+
+<p>
+I enjoy working across different parts of the 3D creation process.
+</p>
+
+</div>
+
+
+<div class="create-grid">
+
+
+<article class="create-card">
+
+<div class="create-icon">
+⌂
+</div>
+
+<h3>
+Environments &amp; Maps
+</h3>
+
+<p>
+Creating explorable spaces, buildings and larger
+environments designed around the player's experience.
+</p>
+
+</article>
+
+
+<article class="create-card">
+
+<div class="create-icon green-icon">
+◇
+</div>
+
+<h3>
+3D Models &amp; Props
+</h3>
+
+<p>
+Building individual assets, props and environmental
+details that help make a world feel complete.
+</p>
+
+</article>
+
+
+<article class="create-card">
+
+<div class="create-icon purple-icon">
+✦
+</div>
+
+<h3>
+Creative Assets
+</h3>
+
+<p>
+Working on accessories and other custom assets while
+experimenting with different ideas and visual styles.
+</p>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- APPROACH -->
+<section class="approach">
+
+<h2>
+My approach
+</h2>
+
+<p>
+What interests me about game creation is more than how
+something looks. I pay attention to the things that can
+make gameplay frustrating or less enjoyable and use that
+perspective when thinking about my own environments and
+assets. I want the worlds I create to have personality
+and visual detail without forgetting that they ultimately
+need to work as places people can actually enjoy playing in.
+</p>
+
+</section>
+
+
+<!-- SKILLS -->
+<section class="skills-section">
+
+<div class="section-title">
+
+<h2>
+Tools &amp; skills
+</h2>
+
+<p>
+The main areas I'm currently working with and developing.
+</p>
+
+</div>
+
+
+<div class="skills">
+
+<span class="skill">Blender</span>
+<span class="skill">Roblox Studio</span>
+<span class="skill">3D Modeling</span>
+<span class="skill">Environment Design</span>
+<span class="skill">Prop Modeling</span>
+<span class="skill">Texturing</span>
+<span class="skill">Mid-to-Low Poly</span>
+<span class="skill">World Building</span>
+
+</div>
+
+</section>
+
+
+<!-- LEARNING -->
+<section class="learning">
+
+<div>
+
+<h2>
+Always learning
+</h2>
+
+<p>
+I'm continuing to develop my existing skills while also
+learning new software and techniques. I enjoy experimenting
+with different workflows and finding new ways to improve
+both the quality and efficiency of my work.
+</p>
+
+</div>
+
+<div class="learning-icon">
+✦
+</div>
+
+</section>
+
+
+<!-- AVAILABILITY -->
+<section class="availability">
+
+<div>
+
+<h2>
+Freelance &amp; commissions
+</h2>
+
+<p>
+I'm available for freelance projects and commissions,
+including 3D models, props, environments, maps and other
+creative game-related work.
+</p>
+
+</div>
+
+<a href="contact.html" class="contact-button">
+Get in touch →
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="about-footer">
+
+<span>
+3D Artist · Modeler · Environment Artist
+</span>
+
+<a href="projects.html">
+View my work →
+</a>
+
+</footer>
+
+
+</div>
+</div>
+
+</body>
+</html>
+
+<!-- ===== COMPLETE ABOUT.HTML - END ===== -->
