@@ -18,15 +18,14 @@
 .work-top{max-width:1250px;margin:auto;display:flex;align-items:center;justify-content:space-between}
 .work-brand{font-size:22px;font-weight:800;line-height:19px}
 .work-brand span{display:block}
-.work-brand .pink{color:#ff9db8}
-.work-brand .green{color:#bad477}
+.pink{color:#ff9db8}.green{color:#bad477}
 
 .back-home{padding:12px 22px;border-radius:25px;background:#fff;color:#66636b;font-weight:700;box-shadow:0 7px 25px rgba(70,50,60,.07);transition:.2s}
 .back-home:hover{transform:translateY(-2px);color:#ff9db8}
 
 /* HERO */
 .work-hero{max-width:1250px;min-height:260px;margin:45px auto 55px;padding:48px;position:relative;overflow:hidden;border-radius:38px;background:linear-gradient(120deg,#ffc4d3,#ff9db8);color:#fff}
-.work-hero h1{position:relative;z-index:2;max-width:600px;margin-bottom:12px;font-size:52px;font-weight:500;line-height:1.05}
+.work-hero h1{position:relative;z-index:2;margin-bottom:12px;font-size:52px;font-weight:500;line-height:1.05}
 .work-hero p{position:relative;z-index:2;max-width:520px;font-size:17px;line-height:1.6}
 
 .hero-decoration{position:absolute;width:330px;height:330px;right:-40px;top:-60px;border:2px solid rgba(255,255,255,.35);border-radius:50%}
@@ -34,7 +33,7 @@
 .hero-decoration:before{width:210px;height:210px;left:-80px;bottom:-30px}
 .hero-decoration:after{width:100px;height:100px;left:-115px;top:60px;background:rgba(255,255,255,.08)}
 
-/* PROJECT AREA */
+/* GALLERY */
 .work-content{max-width:1250px;margin:auto}
 .work-heading{margin-bottom:25px;display:flex;align-items:flex-end;justify-content:space-between}
 .work-heading h2{margin-bottom:5px;font-size:26px}
@@ -43,173 +42,46 @@
 
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
 
-.gallery-card{
-position:relative;
-overflow:hidden;
-border-radius:22px;
-background:#fff;
-box-shadow:0 8px 28px rgba(70,50,60,.07);
-transition:transform .25s ease,box-shadow .25s ease
-}
+.gallery-card{position:relative;overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 8px 28px rgba(70,50,60,.07);transition:.25s}
+.gallery-card:hover{transform:translateY(-7px);box-shadow:0 15px 35px rgba(70,50,60,.12)}
 
-.gallery-card:hover{
-transform:translateY(-7px);
-box-shadow:0 15px 35px rgba(70,50,60,.12)
-}
+.gallery-image{position:relative;height:260px;overflow:hidden}
+.gallery-image img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease,filter .45s ease}
+.gallery-card:hover .gallery-image img{transform:scale(1.045);filter:brightness(1.04)}
 
-.gallery-image{
-height:260px;
-position:relative;
-overflow:hidden
-}
+.gallery-image.real:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(25,15,30,.2));pointer-events:none}
 
-/* PLACEHOLDER PROJECT COLORS */
+/* PLACEHOLDERS */
 .aura{background:linear-gradient(135deg,#dce9b9,#f5c1cd,#fff0df)}
 .ruins{background:linear-gradient(135deg,#eee1c8,#c5d69d,#99af79)}
-.props{background:linear-gradient(135deg,#ffe6ec,#ffd1dd,#f2d7ba)}
 .forest{background:linear-gradient(145deg,#d7e4bc,#a9c58b,#718c6d)}
 
-.gallery-symbol{
-position:absolute;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-font-size:100px;
-color:rgba(255,255,255,.8);
-filter:drop-shadow(0 8px 10px rgba(70,50,60,.12))
-}
-
+.gallery-symbol{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:100px;color:rgba(255,255,255,.8)}
 .ruins .gallery-symbol{color:#eee2d1}
 .forest .gallery-symbol{color:#eaf1dc}
 
-/* CRYSTAL CAVERNS REAL IMAGE */
-.crystal-image{
-position:relative;
-height:260px;
-overflow:hidden;
-background:#30243e
-}
+/* BADGES */
+.view-project{position:absolute;z-index:5;top:17px;right:17px;padding:8px 13px;border-radius:20px;background:rgba(255,255,255,.92);color:#a462b1;font-size:10px;font-weight:800;letter-spacing:.5px;box-shadow:0 4px 15px rgba(30,20,40,.12);transition:.2s}
+.gallery-card:hover .view-project{transform:translateY(-2px);background:#fff}
 
-.crystal-image img{
-width:100%;
-height:100%;
-display:block;
-object-fit:cover;
-object-position:center;
-transition:transform .45s ease,filter .45s ease
-}
+.fairy-badge{color:#d87e9c}
 
-.crystal-card:hover .crystal-image img{
-transform:scale(1.045);
-filter:brightness(1.05)
-}
+/* INFO */
+.gallery-info{min-height:110px;padding:20px;display:flex;align-items:flex-start;justify-content:space-between;gap:15px}
+.gallery-info h3{margin-bottom:5px;font-size:18px}
+.gallery-info p{color:#99969e;font-size:13px}
 
-/* SUBTLE IMAGE GRADIENT */
-.crystal-image:after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(
-180deg,
-rgba(25,15,35,.02) 35%,
-rgba(25,15,35,.28) 100%
-);
-pointer-events:none
-}
+.gallery-arrow{width:37px;height:37px;flex:0 0 37px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#fff0f4;color:#ff9db8;font-size:20px;transition:.2s}
+.gallery-card:hover .gallery-arrow{background:#ff9db8;color:#fff;transform:translateX(3px)}
 
-/* VIEW PROJECT BADGE */
-.view-project{
-position:absolute;
-z-index:5;
-top:17px;
-right:17px;
-padding:8px 13px;
-border-radius:20px;
-background:rgba(255,255,255,.92);
-color:#a462b1;
-font-size:10px;
-font-weight:800;
-letter-spacing:.5px;
-box-shadow:0 4px 15px rgba(30,20,40,.12);
-transition:.2s
-}
-
-.crystal-card:hover .view-project{
-background:#fff;
-transform:translateY(-2px)
-}
-
-/* CARD INFORMATION */
-.gallery-info{
-min-height:110px;
-padding:20px;
-display:flex;
-align-items:flex-start;
-justify-content:space-between;
-gap:15px
-}
-
-.gallery-info h3{
-margin-bottom:5px;
-font-size:18px
-}
-
-.gallery-info p{
-color:#99969e;
-font-size:13px
-}
-
-.gallery-arrow{
-width:37px;
-height:37px;
-flex:0 0 37px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:#fff0f4;
-color:#ff9db8;
-font-size:20px;
-transition:.2s
-}
-
-.gallery-card:hover .gallery-arrow{
-background:#ff9db8;
-color:#fff;
-transform:translateX(3px)
-}
-
-/* COMING SOON */
 .coming-card{cursor:default}
-.coming{
-display:flex;
-align-items:center;
-justify-content:center;
-background:#f8f5f5;
-color:#c0bbc0
-}
-
+.coming{display:flex;align-items:center;justify-content:center;background:#f8f5f5;color:#c0bbc0}
 .coming-card:hover{transform:none}
 
 /* FOOTER */
-.work-footer{
-max-width:1250px;
-margin:65px auto 0;
-padding:30px 0;
-display:flex;
-align-items:center;
-justify-content:space-between;
-border-top:1px solid #eee;
-color:#99969e;
-font-size:13px
-}
+.work-footer{max-width:1250px;margin:65px auto 0;padding:30px 0;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #eee;color:#99969e;font-size:13px}
+.work-footer a{color:#ff9db8;font-weight:700}
 
-.work-footer a{
-color:#ff9db8;
-font-weight:700
-}
-
-/* RESPONSIVE */
 @media(max-width:900px){
 .work-page{padding:25px}
 .gallery{grid-template-columns:repeat(2,1fr)}
@@ -221,19 +93,17 @@ font-weight:700
 .work-hero{margin-top:30px;padding:35px 25px}
 .work-hero h1{font-size:37px}
 .gallery{grid-template-columns:1fr}
-.gallery-image,.crystal-image{height:230px}
+.gallery-image{height:230px}
 .work-heading{align-items:flex-start;flex-direction:column;gap:10px}
 .work-footer{align-items:flex-start;flex-direction:column;gap:10px}
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="work-page">
 
-<!-- TOP -->
 <header class="work-top">
 
 <a href="index.html" class="work-brand">
@@ -248,7 +118,6 @@ font-weight:700
 </header>
 
 
-<!-- HERO -->
 <section class="work-hero">
 
 <h1>
@@ -267,7 +136,6 @@ texturing and environment design.
 </section>
 
 
-<!-- PROJECTS -->
 <main class="work-content">
 
 <div class="work-heading">
@@ -301,9 +169,7 @@ texturing and environment design.
 <p>Fantasy Cottage · Environment</p>
 </div>
 
-<span class="gallery-arrow">
-→
-</span>
+<span class="gallery-arrow">→</span>
 
 </div>
 
@@ -311,12 +177,9 @@ texturing and environment design.
 
 
 <!-- CRYSTAL CAVERNS -->
-<a
-href="crystal-caverns.html"
-class="gallery-card crystal-card"
->
+<a href="crystal-caverns.html" class="gallery-card">
 
-<div class="crystal-image">
+<div class="gallery-image real">
 
 <img
 src="crystal-caverns-hero.png"
@@ -332,20 +195,11 @@ VIEW PROJECT
 <div class="gallery-info">
 
 <div>
-
-<h3>
-Crystal Caverns
-</h3>
-
-<p>
-Fantasy Environment · Blender
-</p>
-
+<h3>Crystal Caverns</h3>
+<p>Fantasy Environment · Blender</p>
 </div>
 
-<span class="gallery-arrow">
-→
-</span>
+<span class="gallery-arrow">→</span>
 
 </div>
 
@@ -366,9 +220,7 @@ Fantasy Environment · Blender
 <p>Environment Design</p>
 </div>
 
-<span class="gallery-arrow">
-→
-</span>
+<span class="gallery-arrow">→</span>
 
 </div>
 
@@ -378,8 +230,17 @@ Fantasy Environment · Blender
 <!-- FAIRY PROPS -->
 <article class="gallery-card">
 
-<div class="gallery-image props">
-<span class="gallery-symbol">♧</span>
+<div class="gallery-image real">
+
+<img
+src="fairy-props-hero.png"
+alt="Fantasy floral doorway 3D model"
+>
+
+<span class="view-project fairy-badge">
+FAIRY PROPS
+</span>
+
 </div>
 
 <div class="gallery-info">
@@ -389,9 +250,7 @@ Fantasy Environment · Blender
 <p>3D Models · Prop Design</p>
 </div>
 
-<span class="gallery-arrow">
-→
-</span>
+<span class="gallery-arrow">→</span>
 
 </div>
 
@@ -412,16 +271,14 @@ Fantasy Environment · Blender
 <p>Environment · World Building</p>
 </div>
 
-<span class="gallery-arrow">
-→
-</span>
+<span class="gallery-arrow">→</span>
 
 </div>
 
 </article>
 
 
-<!-- FUTURE PROJECT -->
+<!-- NEXT PROJECT -->
 <article class="gallery-card coming-card">
 
 <div class="gallery-image coming">
@@ -444,7 +301,6 @@ Fantasy Environment · Blender
 </main>
 
 
-<!-- FOOTER -->
 <footer class="work-footer">
 
 <span>
@@ -460,7 +316,6 @@ Return to portfolio →
 </div>
 
 </body>
-
 </html>
 
 <!-- ===== COMPLETE PROJECTS.HTML - END ===== -->
