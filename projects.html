@@ -45,25 +45,76 @@
 .gallery-card:hover{transform:translateY(-7px);box-shadow:0 15px 35px rgba(70,50,60,.12)}
 
 .gallery-image{position:relative;height:260px;overflow:hidden}
-.gallery-image img{width:100%;height:100%;display:block;object-fit:cover;transition:.45s}
-.gallery-card:hover .gallery-image img{transform:scale(1.045);filter:brightness(1.04)}
 
-.gallery-image.real:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(25,15,30,.2));pointer-events:none}
+.gallery-image img{
+width:100%;
+height:100%;
+display:block;
+object-fit:cover;
+object-position:center;
+transition:transform .45s ease,filter .45s ease
+}
 
-/* PLACEHOLDER ART */
-.aura{background:linear-gradient(135deg,#dce9b9,#f5c1cd,#fff0df)}
+.gallery-card:hover .gallery-image img{
+transform:scale(1.045);
+filter:brightness(1.04)
+}
+
+.gallery-image.real:after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(180deg,transparent 55%,rgba(25,15,30,.2));
+pointer-events:none
+}
+
+/* OVERGROWN RUINS PLACEHOLDER */
 .ruins{background:linear-gradient(135deg,#eee1c8,#c5d69d,#99af79)}
-.wonderlight{background:linear-gradient(145deg,#d7e4bc,#a9c58b,#718c6d)}
 
-.gallery-symbol{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:100px;color:rgba(255,255,255,.82)}
+.gallery-symbol{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+font-size:100px;
+color:rgba(255,255,255,.82)
+}
+
 .ruins .gallery-symbol{color:#eee2d1}
-.wonderlight .gallery-symbol{color:#edf5df}
+
+/* WONDERLIGHT */
+.wonderlight{
+background:linear-gradient(145deg,#d7e4bc,#a9c58b,#718c6d)
+}
+
+.wonderlight .gallery-symbol{
+color:#edf5df
+}
 
 /* BADGES */
-.project-badge{position:absolute;z-index:5;top:17px;right:17px;padding:8px 13px;border-radius:20px;background:rgba(255,255,255,.93);color:#a462b1;font-size:10px;font-weight:800;letter-spacing:.5px;box-shadow:0 4px 15px rgba(30,20,40,.1);transition:.2s}
-.gallery-card:hover .project-badge{transform:translateY(-2px)}
+.project-badge{
+position:absolute;
+z-index:5;
+top:17px;
+right:17px;
+padding:8px 13px;
+border-radius:20px;
+background:rgba(255,255,255,.93);
+color:#a462b1;
+font-size:10px;
+font-weight:800;
+letter-spacing:.5px;
+box-shadow:0 4px 15px rgba(30,20,40,.1);
+transition:.2s
+}
+
+.gallery-card:hover .project-badge{
+transform:translateY(-2px);
+background:#fff
+}
+
+.aura-badge{color:#879c5b}
 .fairy-badge{color:#d87e9c}
-.aura-badge{color:#d77f9d}
 .ruins-badge{color:#83965e}
 
 .production-badge{
@@ -81,28 +132,94 @@ letter-spacing:.6px
 }
 
 /* CARD INFO */
-.gallery-info{min-height:110px;padding:20px;display:flex;align-items:flex-start;justify-content:space-between;gap:15px}
-.gallery-info h3{margin-bottom:5px;font-size:18px}
-.gallery-info p{color:#99969e;font-size:13px}
+.gallery-info{
+min-height:110px;
+padding:20px;
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:15px
+}
 
-.gallery-arrow{width:37px;height:37px;flex:0 0 37px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#fff0f4;color:#ff9db8;font-size:20px;transition:.2s}
-.gallery-card:hover .gallery-arrow{background:#ff9db8;color:#fff;transform:translateX(3px)}
+.gallery-info h3{
+margin-bottom:5px;
+font-size:18px
+}
 
-/* PRODUCTION CARD */
+.gallery-info p{
+color:#99969e;
+font-size:13px
+}
+
+.gallery-arrow{
+width:37px;
+height:37px;
+flex:0 0 37px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#fff0f4;
+color:#ff9db8;
+font-size:20px;
+transition:.2s
+}
+
+.gallery-card:hover .gallery-arrow{
+background:#ff9db8;
+color:#fff;
+transform:translateX(3px)
+}
+
+/* PRODUCTION */
 .production-card{cursor:default}
-.production-card:hover{transform:none;box-shadow:0 8px 28px rgba(70,50,60,.07)}
-.production-card .gallery-image:after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.08)}
-.production-status{display:inline-block;margin-top:5px;color:#899b67!important;font-weight:800!important;font-size:11px!important;letter-spacing:.6px}
+
+.production-card:hover{
+transform:none;
+box-shadow:0 8px 28px rgba(70,50,60,.07)
+}
+
+.production-status{
+display:inline-block;
+margin-top:5px;
+color:#899b67!important;
+font-weight:800!important;
+font-size:11px!important;
+letter-spacing:.6px
+}
 
 /* COMING SOON */
 .coming-card{cursor:default}
-.coming{display:flex;align-items:center;justify-content:center;background:#f8f5f5;color:#c0bbc0}
+
+.coming{
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f8f5f5;
+color:#c0bbc0
+}
+
 .coming-card:hover{transform:none}
 
 /* FOOTER */
-.work-footer{max-width:1250px;margin:65px auto 0;padding:30px 0;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #eee;color:#99969e;font-size:13px}
-.work-footer a{color:#ff9db8;font-weight:700}
+.work-footer{
+max-width:1250px;
+margin:65px auto 0;
+padding:30px 0;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-top:1px solid #eee;
+color:#99969e;
+font-size:13px
+}
 
+.work-footer a{
+color:#ff9db8;
+font-weight:700
+}
+
+/* RESPONSIVE */
 @media(max-width:900px){
 .work-page{padding:25px}
 .gallery{grid-template-columns:repeat(2,1fr)}
@@ -125,6 +242,7 @@ letter-spacing:.6px
 
 <div class="work-page">
 
+<!-- TOP -->
 <header class="work-top">
 
 <a href="index.html" class="work-brand">
@@ -139,6 +257,7 @@ letter-spacing:.6px
 </header>
 
 
+<!-- HERO -->
 <section class="work-hero">
 
 <h1>
@@ -157,6 +276,7 @@ texturing and environment design.
 </section>
 
 
+<!-- PROJECTS -->
 <main class="work-content">
 
 <div class="work-heading">
@@ -179,11 +299,12 @@ texturing and environment design.
 <!-- AURA ROSA -->
 <a href="aura-rosa.html" class="gallery-card">
 
-<div class="gallery-image aura">
+<div class="gallery-image real">
 
-<span class="gallery-symbol">
-✿
-</span>
+<img
+src="aura-rosa-hero.png"
+alt="Aura Rosa fantasy countryside environment"
+>
 
 <span class="project-badge aura-badge">
 VIEW PROJECT
@@ -195,7 +316,7 @@ VIEW PROJECT
 
 <div>
 <h3>Aura Rosa</h3>
-<p>Fantasy Cottage · Environment</p>
+<p>Fantasy Countryside · Environment</p>
 </div>
 
 <span class="gallery-arrow">
@@ -340,15 +461,11 @@ IN PRODUCTION
 </article>
 
 
-<!-- FUTURE PROJECT -->
+<!-- FUTURE -->
 <article class="gallery-card coming-card">
 
 <div class="gallery-image coming">
-
-<span>
-More coming soon...
-</span>
-
+<span>More coming soon...</span>
 </div>
 
 <div class="gallery-info">
@@ -368,6 +485,7 @@ More coming soon...
 </main>
 
 
+<!-- FOOTER -->
 <footer class="work-footer">
 
 <span>
