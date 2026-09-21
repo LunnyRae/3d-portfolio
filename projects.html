@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Work | 3D Artist Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .work-page{
+            min-height:100vh;
+            padding:50px;
+            background:#fbfbfa;
+        }
+
+        .work-top{
+            max-width:1250px;
+            margin:auto;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+
+        .work-brand{
+            font-size:22px;
+            font-weight:800;
+            line-height:19px;
+        }
+
+        .work-brand span{display:block}
+        .work-brand .pink{color:#ff9db8}
+        .work-brand .green{color:#bad477}
+
+        .back-home{
+            padding:12px 22px;
+            border-radius:25px;
+            background:#fff;
+            color:#66636b;
+            font-weight:700;
+            box-shadow:0 7px 25px rgba(70,50,60,.07);
+            transition:.2s;
+        }
+
+        .back-home:hover{
+            transform:translateY(-2px);
+            color:#ff9db8;
+        }
+
+        .work-hero{
+            max-width:1250px;
+            min-height:260px;
+            margin:45px auto 55px;
+            padding:48px;
+            position:relative;
+            overflow:hidden;
+            border-radius:38px;
+            background:linear-gradient(120deg,#ffc4d3,#ff9db8);
+            color:#fff;
+        }
+
+        .work-hero h1{
+            position:relative;
+            z-index:2;
+            max-width:600px;
+            margin-bottom:12px;
+            font-size:52px;
+            font-weight:500;
+            line-height:1.05;
+        }
+
+        .work-hero p{
+            position:relative;
+            z-index:2;
+            max-width:520px;
+            font-size:17px;
+            line-height:1.6;
+        }
+
+        .hero-decoration{
+            position:absolute;
+            width:330px;
+            height:330px;
+            right:-40px;
+            top:-60px;
+            border:2px solid rgba(255,255,255,.35);
+            border-radius:50%;
+        }
+
+        .hero-decoration::before,
+        .hero-decoration::after{
+            content:"";
+            position:absolute;
+            border:2px solid rgba(255,255,255,.3);
+            border-radius:50%;
+        }
+
+        .hero-decoration::before{
+            width:210px;
+            height:210px;
+            left:-80px;
+            bottom:-30px;
+        }
+
+        .hero-decoration::after{
+            width:100px;
+            height:100px;
+            left:-115px;
+            top:60px;
+            background:rgba(255,255,255,.08);
+        }
+
+        .work-content{
+            max-width:1250px;
+            margin:auto;
+        }
+
+        .work-heading{
+            margin-bottom:25px;
+            display:flex;
+            align-items:flex-end;
+            justify-content:space-between;
+        }
+
+        .work-heading h2{
+            margin-bottom:5px;
+            font-size:26px;
+        }
+
+        .work-heading p{
+            color:#99969e;
+            font-size:14px;
+        }
+
+        .project-count{
+            color:#ff9db8;
+            font-size:14px;
+            font-weight:800;
+        }
+
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:25px;
+        }
+
+        .gallery-card{
+            overflow:hidden;
+            border-radius:22px;
+            background:#fff;
+            box-shadow:0 8px 28px rgba(70,50,60,.07);
+            transition:.25s;
+        }
+
+        .gallery-card:hover{
+            transform:translateY(-7px);
+            box-shadow:0 15px 35px rgba(70,50,60,.12);
+        }
+
+        .gallery-image{
+            height:260px;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .aura{
+            background:linear-gradient(135deg,#dce9b9,#f5c1cd,#fff0df);
+        }
+
+        .crystals{
+            background:linear-gradient(145deg,#cec5d5,#ba92b0,#716978);
+        }
+
+        .ruins{
+            background:linear-gradient(135deg,#eee1c8,#c5d69d,#99af79);
+        }
+
+        .props{
+            background:linear-gradient(135deg,#ffe6ec,#ffd1dd,#f2d7ba);
+        }
+
+        .forest{
+            background:linear-gradient(145deg,#d7e4bc,#a9c58b,#718c6d);
+        }
+
+        .coming{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#f8f5f5;
+            color:#c0bbc0;
+        }
+
+        .gallery-symbol{
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            font-size:100px;
+            color:rgba(255,255,255,.8);
+            filter:drop-shadow(0 8px 10px rgba(70,50,60,.12));
+        }
+
+        .crystals .gallery-symbol{color:#f5a7eb}
+        .ruins .gallery-symbol{color:#eee2d1}
+        .forest .gallery-symbol{color:#eaf1dc}
+
+        .gallery-info{
+            min-height:110px;
+            padding:20px;
+            display:flex;
+            align-items:flex-start;
+            justify-content:space-between;
+            gap:15px;
+        }
+
+        .gallery-info h3{
+            margin-bottom:5px;
+            font-size:18px;
+        }
+
+        .gallery-info p{
+            color:#99969e;
+            font-size:13px;
+        }
+
+        .gallery-arrow{
+            width:37px;
+            height:37px;
+            flex:0 0 37px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:50%;
+            background:#fff0f4;
+            color:#ff9db8;
+            font-size:20px;
+            transition:.2s;
+        }
+
+        .gallery-card:hover .gallery-arrow{
+            background:#ff9db8;
+            color:#fff;
+            transform:translateX(3px);
+        }
+
+        .work-footer{
+            max-width:1250px;
+            margin:65px auto 0;
+            padding:30px 0;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            border-top:1px solid #eee;
+            color:#99969e;
+            font-size:13px;
+        }
+
+        .work-footer a{
+            color:#ff9db8;
+            font-weight:700;
+        }
+
+        @media(max-width:900px){
+            .work-page{padding:25px}
+            .gallery{grid-template-columns:repeat(2,1fr)}
+            .work-hero h1{font-size:43px}
+        }
+
+        @media(max-width:600px){
+            .work-page{padding:18px}
+            .work-hero{margin-top:30px;padding:35px 25px}
+            .work-hero h1{font-size:37px}
+            .gallery{grid-template-columns:1fr}
+            .gallery-image{height:230px}
+            .work-heading{align-items:flex-start;flex-direction:column;gap:10px}
+            .work-footer{align-items:flex-start;flex-direction:column;gap:10px}
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="work-page">
+
+        <!-- TOP -->
+        <header class="work-top">
+
+            <a href="index.html" class="work-brand">
+                <span class="pink">LUNAR</span>
+                <span class="green">BLOOM</span>
+            </a>
+
+            <a href="index.html" class="back-home">
+                ← Back Home
+            </a>
+
+        </header>
+
+
+        <!-- HERO -->
+        <section class="work-hero">
+
+            <h1>
+                My little worlds<br>
+                in 3D
+            </h1>
+
+            <p>
+                A collection of environments, models and
+                stylized worlds created through 3D modeling,
+                texturing and environment design.
+            </p>
+
+            <div class="hero-decoration"></div>
+
+        </section>
+
+
+        <!-- PROJECT GALLERY -->
+        <main class="work-content">
+
+            <div class="work-heading">
+
+                <div>
+                    <h2>All Projects</h2>
+                    <p>Explore my environments, models and experiments.</p>
+                </div>
+
+                <span class="project-count">
+                    5 PROJECTS
+                </span>
+
+            </div>
+
+
+            <div class="gallery">
+
+                <!-- PROJECT 1 -->
+                <a href="#" class="gallery-card">
+
+                    <div class="gallery-image aura">
+                        <span class="gallery-symbol">✿</span>
+                    </div>
+
+                    <div class="gallery-info">
+
+                        <div>
+                            <h3>Aura Rosa</h3>
+                            <p>Fantasy Cottage · Environment</p>
+                        </div>
+
+                        <span class="gallery-arrow">→</span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PROJECT 2 -->
+                <a href="#" class="gallery-card">
+
+                    <div class="gallery-image crystals">
+                        <span class="gallery-symbol">♦</span>
+                    </div>
+
+                    <div class="gallery-info">
+
+                        <div>
+                            <h3>Crystal Caverns</h3>
+                            <p>Fantasy Environment</p>
+                        </div>
+
+                        <span class="gallery-arrow">→</span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PROJECT 3 -->
+                <a href="#" class="gallery-card">
+
+                    <div class="gallery-image ruins">
+                        <span class="gallery-symbol">♜</span>
+                    </div>
+
+                    <div class="gallery-info">
+
+                        <div>
+                            <h3>Overgrown Ruins</h3>
+                            <p>Environment Design</p>
+                        </div>
+
+                        <span class="gallery-arrow">→</span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PROJECT 4 -->
+                <a href="#" class="gallery-card">
+
+                    <div class="gallery-image props">
+                        <span class="gallery-symbol">♧</span>
+                    </div>
+
+                    <div class="gallery-info">
+
+                        <div>
+                            <h3>Fairy Props</h3>
+                            <p>3D Models · Prop Design</p>
+                        </div>
+
+                        <span class="gallery-arrow">→</span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PROJECT 5 -->
+                <a href="#" class="gallery-card">
+
+                    <div class="gallery-image forest">
+                        <span class="gallery-symbol">♠</span>
+                    </div>
+
+                    <div class="gallery-info">
+
+                        <div>
+                            <h3>Enchanted Forest</h3>
+                            <p>Environment · World Building</p>
+                        </div>
+
+                        <span class="gallery-arrow">→</span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- FUTURE PROJECT -->
+                <article class="gallery-card">
+
+                    <div class="gallery-image coming">
+
+                        <span>
+                            More coming soon...
+                        </span>
+
+                    </div>
+
+                    <div class="gallery-info">
+
+                        <div>
+                            <h3>Next Project</h3>
+                            <p>Currently in development</p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="work-footer">
+
+            <span>
+                3D Artist · Environment Artist · Modeler
+            </span>
+
+            <a href="index.html">
+                Return to portfolio →
+            </a>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
+
+<!-- ===== COMPLETE PROJECTS.HTML - END ===== -->
