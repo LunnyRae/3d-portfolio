@@ -24,272 +24,74 @@
 .brand-a{color:#ff9db8}
 .brand-b{color:#bad477}
 .back-projects{padding:12px 21px;border-radius:25px;background:#fff;color:#68646e;font-weight:700;box-shadow:0 7px 25px rgba(70,50,80,.07);transition:.2s}
-.back-projects:hover{transform:translateY(-2px);color:#b26fc1}
+.back-projects:hover{transform:translateY(-2px);color:#a56bb1}
 
 /* HERO */
-.crystal-hero{
-position:relative;
-height:500px;
-overflow:hidden;
-border-radius:38px;
-background:#403849;
-box-shadow:0 15px 40px rgba(75,50,90,.15)
-}
-
-.hero-image{
-position:absolute;
-inset:0;
-width:100%;
-height:100%;
-object-fit:cover;
-object-position:center;
-display:block
-}
-
-.hero-overlay{
-position:absolute;
-inset:0;
-z-index:2;
-background:
-linear-gradient(
-90deg,
-rgba(32,25,40,.88) 0%,
-rgba(39,28,48,.68) 28%,
-rgba(45,30,55,.28) 52%,
-rgba(30,20,38,.05) 78%
-)
-}
-
-.crystal-hero-copy{
-position:absolute;
-z-index:5;
-left:50px;
-top:50%;
-transform:translateY(-50%);
-color:#fff
-}
-
-.crystal-label{
-display:inline-block;
-margin-bottom:15px;
-padding:8px 14px;
-border:1px solid rgba(255,255,255,.4);
-border-radius:20px;
-background:rgba(255,255,255,.12);
-backdrop-filter:blur(5px);
-font-size:12px;
-font-weight:800;
-letter-spacing:1px
-}
-
-.crystal-hero h1{
-margin-bottom:15px;
-font-size:64px;
-font-weight:500;
-line-height:1
-}
-
-.crystal-hero p{
-max-width:390px;
-font-size:17px;
-line-height:1.6;
-opacity:.92
-}
+.crystal-hero{position:relative;height:500px;overflow:hidden;border-radius:38px;background:#403849;box-shadow:0 15px 40px rgba(75,50,90,.15)}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(27,20,35,.9) 0%,rgba(35,25,45,.68) 28%,rgba(40,28,50,.25) 55%,rgba(20,15,30,.03) 80%)}
+.crystal-hero-copy{position:absolute;z-index:5;left:50px;top:50%;transform:translateY(-50%);color:#fff}
+.crystal-label{display:inline-block;margin-bottom:15px;padding:8px 14px;border:1px solid rgba(255,255,255,.4);border-radius:20px;background:rgba(255,255,255,.12);backdrop-filter:blur(5px);font-size:12px;font-weight:800;letter-spacing:1px}
+.crystal-hero h1{margin-bottom:15px;font-size:64px;font-weight:500;line-height:1}
+.crystal-hero p{max-width:390px;font-size:17px;line-height:1.6;opacity:.94}
 
 /* ABOUT */
-.project-intro{
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:60px;
-padding:65px 15px
-}
+.project-intro{display:grid;grid-template-columns:2fr 1fr;gap:60px;padding:65px 15px}
+.project-intro h2,.renders-title h2{margin-bottom:15px;font-size:27px}
+.project-intro p{color:#8d8993;line-height:1.8;font-size:15px}
 
-.project-intro h2,.renders-title h2{
-margin-bottom:15px;
-font-size:27px
-}
-
-.project-intro p{
-color:#8d8993;
-line-height:1.8;
-font-size:15px
-}
-
-.project-details{
-padding:25px;
-border-radius:20px;
-background:#fff;
-box-shadow:0 8px 28px rgba(70,50,80,.06)
-}
-
-.detail{
-padding:12px 0;
-border-bottom:1px solid #f0edf1
-}
-
+.project-details{padding:25px;border-radius:20px;background:#fff;box-shadow:0 8px 28px rgba(70,50,80,.06)}
+.detail{padding:12px 0;border-bottom:1px solid #f0edf1}
 .detail:last-child{border:0}
-
 .detail span,.detail strong{display:block}
-
-.detail span{
-margin-bottom:3px;
-color:#aaa5ae;
-font-size:11px;
-font-weight:800;
-text-transform:uppercase;
-letter-spacing:.8px
-}
-
+.detail span{margin-bottom:3px;color:#aaa5ae;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
 .detail strong{font-size:14px}
 
-/* RENDERS */
+/* SELECTED RENDERS */
 .renders-title{margin-bottom:25px}
 .renders-title p{color:#99949e;font-size:14px}
 
-.render-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:22px
-}
+.render-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 
-.render{
-position:relative;
-min-height:330px;
-overflow:hidden;
-border-radius:24px;
-background:linear-gradient(145deg,#c5b7ca,#8f7797,#5d5664)
-}
+.render-card{position:relative;height:300px;overflow:hidden;border-radius:24px;background:#463d50;box-shadow:0 10px 30px rgba(60,40,75,.08);transition:transform .25s ease,box-shadow .25s ease}
 
-.render.large{
-grid-column:1/-1;
-min-height:440px
-}
+.render-card:hover{transform:translateY(-5px);box-shadow:0 16px 35px rgba(60,40,75,.15)}
 
-.render-placeholder{
-position:absolute;
-inset:0;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-color:rgba(255,255,255,.85)
-}
+.render-card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease}
 
-.render-placeholder b{
-font-size:50px;
-margin-bottom:10px
-}
+.render-card:hover img{transform:scale(1.035)}
 
-.render-placeholder span{
-font-size:13px;
-font-weight:700;
-letter-spacing:.5px
-}
+.render-wide{grid-column:1/-1;height:500px}
 
-.render::after{
-content:"";
-position:absolute;
-width:130px;
-height:240px;
-right:50px;
-bottom:-20px;
-background:linear-gradient(135deg,#ffe7ff,#d980ec,#8e4aaa);
-clip-path:polygon(50% 0,100% 35%,80% 100%,20% 100%,0 35%);
-opacity:.45
-}
+.render-caption{position:absolute;left:18px;bottom:18px;z-index:3;padding:8px 13px;border-radius:20px;background:rgba(30,22,38,.7);backdrop-filter:blur(7px);color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;opacity:0;transform:translateY(5px);transition:.25s}
 
-.render:nth-child(2)::after{
-right:auto;
-left:45px;
-transform:rotate(-12deg)
-}
+.render-card:hover .render-caption{opacity:1;transform:translateY(0)}
 
-.render.large::after{
-width:180px;
-height:350px;
-right:140px;
-opacity:.4
-}
+.render-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(25,17,32,.22));pointer-events:none}
 
 /* PROCESS */
-.process{
-margin-top:65px;
-padding:40px;
-border-radius:28px;
-background:#fff;
-box-shadow:0 8px 28px rgba(70,50,80,.05)
-}
-
-.process h2{
-margin-bottom:30px;
-font-size:27px
-}
-
-.process-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px
-}
-
-.process-step{
-position:relative;
-padding-left:48px
-}
-
-.step-number{
-position:absolute;
-left:0;
-top:0;
-width:35px;
-height:35px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:#f5e8f7;
-color:#a66ab2;
-font-weight:800
-}
-
-.process-step h3{
-margin-bottom:6px;
-font-size:15px
-}
-
-.process-step p{
-color:#99949e;
-font-size:13px;
-line-height:1.6
-}
+.process{margin-top:65px;padding:40px;border-radius:28px;background:#fff;box-shadow:0 8px 28px rgba(70,50,80,.05)}
+.process h2{margin-bottom:30px;font-size:27px}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.process-step{position:relative;padding-left:48px}
+.step-number{position:absolute;left:0;top:0;width:35px;height:35px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#f5e8f7;color:#a66ab2;font-weight:800}
+.process-step h3{margin-bottom:6px;font-size:15px}
+.process-step p{color:#99949e;font-size:13px;line-height:1.6}
 
 /* BOTTOM */
-.bottom-nav{
-margin-top:65px;
-padding:30px 0;
-display:flex;
-align-items:center;
-justify-content:space-between;
-border-top:1px solid #ebe8ec
-}
-
-.bottom-nav a{
-font-weight:700;
-color:#a66ab2
-}
-
-.bottom-nav span{
-color:#aaa5ae;
-font-size:13px
-}
+.bottom-nav{margin-top:65px;padding:30px 0;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ebe8ec}
+.bottom-nav a{font-weight:700;color:#a66ab2}
+.bottom-nav span{color:#aaa5ae;font-size:13px}
 
 /* RESPONSIVE */
-@media(max-width:850px){
+@media(max-width:900px){
 .crystal-page{padding:25px}
-.crystal-hero{height:480px}
+.crystal-hero{height:470px}
 .crystal-hero h1{font-size:50px}
 .crystal-hero-copy{left:35px}
-.hero-overlay{background:linear-gradient(90deg,rgba(30,22,38,.88),rgba(35,25,45,.45))}
 .project-intro{grid-template-columns:1fr;gap:30px}
+.render-gallery{grid-template-columns:1fr 1fr}
+.render-wide{grid-column:1/-1;height:400px}
 .process-grid{grid-template-columns:1fr}
 }
 
@@ -300,11 +102,10 @@ font-size:13px
 .crystal-hero h1{font-size:42px}
 .crystal-hero p{max-width:270px;font-size:15px}
 .hero-image{object-position:60% center}
-.hero-overlay{background:linear-gradient(90deg,rgba(27,20,34,.9),rgba(35,25,45,.45))}
-.render-grid{grid-template-columns:1fr}
-.render.large{grid-column:auto}
-.render,.render.large{min-height:280px}
+.hero-overlay{background:linear-gradient(90deg,rgba(27,20,34,.92),rgba(35,25,45,.45))}
 .project-intro{padding:45px 5px}
+.render-gallery{grid-template-columns:1fr}
+.render-card,.render-wide{grid-column:auto;height:280px}
 .process{padding:25px}
 .bottom-nav{align-items:flex-start;flex-direction:column;gap:15px}
 }
@@ -314,7 +115,6 @@ font-size:13px
 <body>
 
 <div class="crystal-page">
-
 <div class="crystal-container">
 
 <header class="crystal-top">
@@ -331,12 +131,12 @@ font-size:13px
 </header>
 
 
-<!-- HERO WITH YOUR IMAGE -->
+<!-- HERO -->
 <section class="crystal-hero">
 
 <img
 src="crystal-caverns-hero.png"
-alt="Crystal Caverns 3D environment"
+alt="Crystal Caverns environment"
 class="hero-image"
 >
 
@@ -407,7 +207,7 @@ colour to create a mysterious but inviting environment.
 </section>
 
 
-<!-- RENDERS -->
+<!-- SELECTED RENDERS -->
 <section>
 
 <div class="renders-title">
@@ -415,37 +215,70 @@ colour to create a mysterious but inviting environment.
 <h2>Selected Renders</h2>
 
 <p>
-Final renders and details from the environment.
+Environment details, props and a wider look at Crystal Caverns.
 </p>
 
 </div>
 
-<div class="render-grid">
 
-<div class="render">
+<div class="render-gallery">
 
-<div class="render-placeholder">
-<b>◇</b>
-<span>MAIN ENVIRONMENT RENDER</span>
-</div>
+<!-- DOOR -->
+<div class="render-card">
 
-</div>
+<img
+src="crystal-door.png"
+alt="Crystal Caverns purple doorway"
+>
 
-<div class="render">
-
-<div class="render-placeholder">
-<b>◇</b>
-<span>CRYSTAL DETAIL RENDER</span>
-</div>
+<span class="render-caption">
+DOOR DESIGN
+</span>
 
 </div>
 
-<div class="render large">
 
-<div class="render-placeholder">
-<b>◇</b>
-<span>WIDE ENVIRONMENT RENDER</span>
+<!-- CRYSTALS -->
+<div class="render-card">
+
+<img
+src="crystal-detail.png"
+alt="Crystal formations inside Crystal Caverns"
+>
+
+<span class="render-caption">
+CRYSTAL DETAILS
+</span>
+
 </div>
+
+
+<!-- ARCH -->
+<div class="render-card">
+
+<img
+src="crystal-arch.png"
+alt="Crystal Caverns arched doorway"
+>
+
+<span class="render-caption">
+ARCHWAY DESIGN
+</span>
+
+</div>
+
+
+<!-- WIDE ENVIRONMENT -->
+<div class="render-card render-wide">
+
+<img
+src="crystal-wide.png"
+alt="Wide view of the Crystal Caverns environment"
+>
+
+<span class="render-caption">
+FULL ENVIRONMENT
+</span>
 
 </div>
 
@@ -468,8 +301,8 @@ Final renders and details from the environment.
 <h3>Blockout</h3>
 
 <p>
-Planning the cavern layout, scale and main
-environment shapes.
+Planning the environment layout, scale and
+main architectural shapes.
 </p>
 
 </div>
@@ -481,8 +314,8 @@ environment shapes.
 <h3>Modeling</h3>
 
 <p>
-Building the rock formations, crystals and
-environment assets.
+Building the doors, crystal formations,
+furniture and environment assets.
 </p>
 
 </div>
@@ -494,8 +327,8 @@ environment assets.
 <h3>Lighting &amp; Polish</h3>
 
 <p>
-Creating the final atmosphere with lighting,
-materials and composition.
+Using crystal glow, lantern lighting and
+colour to create the final atmosphere.
 </p>
 
 </div>
