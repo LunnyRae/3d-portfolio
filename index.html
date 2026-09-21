@@ -4,29 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>3D Artist Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
 <div class="portfolio">
 
-    <!-- =====================================
-         LEFT SIDEBAR
-    ====================================== -->
-
+    <!-- LEFT SIDEBAR -->
     <aside class="sidebar">
 
         <div class="brand">
@@ -34,12 +25,10 @@
             <span class="brand-green">BLOOM</span>
         </div>
 
-
         <div class="current-project">
             <span class="current-icon">▦</span>
             <span>AURA ROSA</span>
         </div>
-
 
         <nav class="main-nav">
 
@@ -58,7 +47,7 @@
                 <span>Contact</span>
             </a>
 
-            <a href="#projects" class="nav-item">
+            <a href="projects.html" class="nav-item">
                 <span class="nav-icon">▣</span>
                 <span>Project Pages</span>
             </a>
@@ -70,9 +59,7 @@
 
         </nav>
 
-
         <div class="sidebar-line"></div>
-
 
         <div class="account-nav">
 
@@ -88,34 +75,22 @@
 
         </div>
 
-
         <div class="help">
-
             <span class="help-circle">?</span>
-
             <strong>Help</strong>
-
             <button>•••</button>
-
         </div>
 
     </aside>
 
 
-
-    <!-- =====================================
-         CENTER
-    ====================================== -->
-
+    <!-- CENTER CONTENT -->
     <main class="content" id="home">
 
-
         <!-- TOP BAR -->
-
         <header class="topbar">
 
             <div class="search">
-
                 <span class="search-symbol">⌕</span>
 
                 <input
@@ -123,9 +98,7 @@
                     id="searchInput"
                     placeholder="Search Here"
                 >
-
             </div>
-
 
             <div class="top-actions">
 
@@ -142,11 +115,7 @@
         </header>
 
 
-
-        <!-- =====================================
-             HERO
-        ====================================== -->
-
+        <!-- HERO -->
         <section class="hero">
 
             <div class="hero-copy">
@@ -160,11 +129,10 @@
                     Environment artist &amp; 3D modeller
                 </p>
 
-
                 <div class="hero-actions">
 
                     <a
-                        href="#projects"
+                        href="projects.html"
                         class="primary-button"
                     >
                         View my work
@@ -182,20 +150,11 @@
             </div>
 
 
-
-            <!--
-                This is temporary artwork.
-
-                Later we will replace this entire visual
-                area with one of YOUR actual Blender renders.
-            -->
-
+            <!-- TEMPORARY HERO ART -->
             <div class="hero-visual">
 
                 <div class="fairy-wing wing-left"></div>
-
                 <div class="fairy-wing wing-right"></div>
-
 
                 <div class="cottage">
 
@@ -206,17 +165,13 @@
                         <div class="cottage-window"></div>
 
                         <div class="cottage-door">
-
                             <span class="door-window"></span>
-
                             <span class="door-handle"></span>
-
                         </div>
 
                     </div>
 
                 </div>
-
 
                 <span class="hero-flower flower-1">✿</span>
                 <span class="hero-flower flower-2">✿</span>
@@ -229,48 +184,33 @@
         </section>
 
 
-
         <!-- HERO DOTS -->
-
         <div class="hero-dots">
-
             <button class="hero-dot active"></button>
-
             <button class="hero-dot"></button>
-
             <button class="hero-dot"></button>
-
         </div>
 
 
-
-        <!-- =====================================
-             SELECTED WORK
-        ====================================== -->
-
-        <section
-            class="projects"
-            id="projects"
-        >
+        <!-- SELECTED WORK -->
+        <section class="projects" id="projects">
 
             <div class="section-header">
 
                 <h2>Selected Work</h2>
 
-                <button id="viewAllButton">
-                    View All
-                    <span>→</span>
-                </button>
+                <a href="projects.html">
+                    <button id="viewAllButton">
+                        View All →
+                    </button>
+                </a>
 
             </div>
 
 
-
             <div class="project-cards">
 
-
-                <!-- PROJECT ONE -->
-
+                <!-- PROJECT 1 -->
                 <article
                     class="project-card"
                     data-project="floral doorway"
@@ -279,22 +219,15 @@
                     <div class="project-preview floral-preview">
 
                         <div class="preview-cottage">
-
                             <div class="preview-roof"></div>
-
                             <div class="preview-house"></div>
-
                         </div>
 
-
                         <span class="preview-flower pf1">✿</span>
-
                         <span class="preview-flower pf2">✿</span>
-
                         <span class="preview-flower pf3">✿</span>
 
                     </div>
-
 
                     <div class="project-bottom">
 
@@ -309,9 +242,7 @@
                 </article>
 
 
-
-                <!-- PROJECT TWO -->
-
+                <!-- PROJECT 2 -->
                 <article
                     class="project-card"
                     data-project="crystal caverns"
@@ -320,17 +251,12 @@
                     <div class="project-preview crystal-preview">
 
                         <span class="crystal c1"></span>
-
                         <span class="crystal c2"></span>
-
                         <span class="crystal c3"></span>
-
                         <span class="crystal c4"></span>
-
                         <span class="crystal c5"></span>
 
                     </div>
-
 
                     <div class="project-bottom">
 
@@ -345,9 +271,7 @@
                 </article>
 
 
-
-                <!-- PROJECT THREE -->
-
+                <!-- PROJECT 3 -->
                 <article
                     class="project-card"
                     data-project="overgrown ruins"
@@ -356,19 +280,15 @@
                     <div class="project-preview ruins-preview">
 
                         <span class="ruin-column rc1"></span>
-
                         <span class="ruin-column rc2"></span>
-
                         <span class="ruin-column rc3"></span>
 
                         <span class="ruin-arch"></span>
 
                         <span class="ruin-plant plant1">✿</span>
-
                         <span class="ruin-plant plant2">❀</span>
 
                     </div>
-
 
                     <div class="project-bottom">
 
@@ -387,23 +307,14 @@
         </section>
 
 
-
-        <!-- =====================================
-             ABOUT + SKILLS
-        ====================================== -->
-
-        <section
-            class="information"
-            id="about"
-        >
-
+        <!-- ABOUT + SKILLS -->
+        <section class="information" id="about">
 
             <article class="information-card">
 
                 <div class="information-icon">
                     ●
                 </div>
-
 
                 <div class="information-copy">
 
@@ -416,16 +327,11 @@
 
                 </div>
 
-
-                <button
-                    class="card-options"
-                    aria-label="About options"
-                >
+                <button class="card-options">
                     •••
                 </button>
 
             </article>
-
 
 
             <article class="information-card">
@@ -433,7 +339,6 @@
                 <div class="information-icon cube">
                     ◇
                 </div>
-
 
                 <div class="information-copy">
 
@@ -446,33 +351,21 @@
 
                 </div>
 
-
-                <button
-                    class="card-options"
-                    aria-label="Skills options"
-                >
+                <button class="card-options">
                     •••
                 </button>
 
             </article>
 
-
         </section>
-
 
     </main>
 
 
-
-    <!-- =====================================
-         RIGHT PANEL
-    ====================================== -->
-
+    <!-- RIGHT PANEL -->
     <aside class="profile-panel">
 
-
         <!-- PROFILE -->
-
         <section class="profile">
 
             <div class="profile-top">
@@ -489,13 +382,11 @@
 
                 </div>
 
-
                 <div class="avatar">
                     🦋
                 </div>
 
             </div>
-
 
 
             <div class="socials">
@@ -515,18 +406,14 @@
             </div>
 
 
-
             <strong class="palette-title">
                 #COLORS
             </strong>
 
-
             <div class="palette">
 
                 <span class="palette-green"></span>
-
                 <span class="palette-pink"></span>
-
                 <span class="palette-cream"></span>
 
             </div>
@@ -534,9 +421,7 @@
         </section>
 
 
-
-        <!-- ARTIST INFO -->
-
+        <!-- ARTIST -->
         <section class="artist-info">
 
             <div class="panel-heading">
@@ -553,7 +438,6 @@
 
                 </div>
 
-
                 <button>
                     •••
                 </button>
@@ -563,11 +447,7 @@
         </section>
 
 
-
-        <!-- =====================================
-             PROJECT PAGES
-        ====================================== -->
-
+        <!-- PROJECT PAGES -->
         <section class="project-pages">
 
             <div class="panel-heading">
@@ -576,20 +456,18 @@
                     Project Pages
                 </h2>
 
-                <button>
-                    •••
-                </button>
+                <a href="projects.html">
+                    View All
+                </a>
 
             </div>
 
 
-
-            <button class="side-project">
+            <a href="projects.html" class="side-project">
 
                 <div class="side-image floral-side">
                     ✿
                 </div>
-
 
                 <div class="side-project-text">
 
@@ -603,21 +481,18 @@
 
                 </div>
 
-
                 <span class="side-arrow">
                     ›
                 </span>
 
-            </button>
+            </a>
 
 
-
-            <button class="side-project">
+            <a href="projects.html" class="side-project">
 
                 <div class="side-image crystal-side">
                     ♦
                 </div>
-
 
                 <div class="side-project-text">
 
@@ -631,21 +506,18 @@
 
                 </div>
 
-
                 <span class="side-arrow">
                     ›
                 </span>
 
-            </button>
+            </a>
 
 
-
-            <button class="side-project">
+            <a href="projects.html" class="side-project">
 
                 <div class="side-image ruins-side">
                     ♜
                 </div>
-
 
                 <div class="side-project-text">
 
@@ -659,21 +531,18 @@
 
                 </div>
 
-
                 <span class="side-arrow">
                     ›
                 </span>
 
-            </button>
+            </a>
 
 
-
-            <button class="side-project">
+            <a href="projects.html" class="side-project">
 
                 <div class="side-image props-side">
                     ♧
                 </div>
-
 
                 <div class="side-project-text">
 
@@ -687,25 +556,17 @@
 
                 </div>
 
-
                 <span class="side-arrow">
                     ›
                 </span>
 
-            </button>
+            </a>
 
         </section>
 
 
-
-        <!-- =====================================
-             CONTACT
-        ====================================== -->
-
-        <section
-            class="contact"
-            id="contact"
-        >
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
 
             <div class="panel-heading">
 
@@ -720,7 +581,6 @@
             </div>
 
 
-
             <a
                 class="contact-box"
                 href="mailto:hello@example.com"
@@ -729,7 +589,6 @@
                 <div class="contact-icon">
                     ✉
                 </div>
-
 
                 <div class="contact-copy">
 
@@ -745,7 +604,6 @@
 
                 </div>
 
-
                 <span class="contact-arrow">
                     →
                 </span>
@@ -754,17 +612,12 @@
 
         </section>
 
-
     </aside>
 
 </div>
 
 
-
-<!-- =====================================
-     SETTINGS POPUP
-====================================== -->
-
+<!-- SETTINGS -->
 <div
     class="settings-overlay"
     id="settingsModal"
@@ -775,16 +628,13 @@
         <button
             class="settings-close"
             id="closeSettings"
-            aria-label="Close settings"
         >
             ×
         </button>
 
-
         <h2>
             Settings
         </h2>
-
 
         <p>
             Portfolio settings will appear here.
@@ -795,11 +645,9 @@
 </div>
 
 
-
 <script src="script.js"></script>
 
 </body>
-
 </html>
 
-<!-- ===== END OF INDEX.HTML ===== -->
+<!-- ===== COMPLETE INDEX.HTML - END ===== -->
