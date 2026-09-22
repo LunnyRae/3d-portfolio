@@ -1,95 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>Prices | Lunar Bloom</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root{--pink:#ff9db8;--light:#ffe4ec;--green:#aebb70;--text:#575159;--muted:#999398;--white:#fff;--bg:#fffafa}
+:root{
+--pink:#ff9db8;
+--light:#ffe4ec;
+--green:#aebb70;
+--text:#575159;
+--muted:#999398;
+--white:#fff;
+--bg:#fffafa
+}
+
 *{box-sizing:border-box}
-body{margin:0;font-family:"Nunito",sans-serif;background:var(--bg);color:var(--text)}
-a{text-decoration:none;color:inherit}
+
+body{
+margin:0;
+font-family:"Nunito",sans-serif;
+background:var(--bg);
+color:var(--text)
+}
+
+a{
+text-decoration:none;
+color:inherit
+}
 
 /* LAYOUT */
-.page{min-height:100vh;display:grid;grid-template-columns:220px 1fr}
-.sidebar{min-height:100vh;padding:38px 22px;background:#fff;border-right:1px solid #f1eaed}
-.main{padding:28px 35px}
-.content{max-width:1150px;margin:auto}
+.page{
+min-height:100vh;
+display:grid;
+grid-template-columns:220px 1fr
+}
+
+.sidebar{
+min-height:100vh;
+padding:38px 22px;
+background:#fff;
+border-right:1px solid #f1eaed
+}
+
+.main{
+padding:28px 35px
+}
+
+.content{
+max-width:1150px;
+margin:auto
+}
 
 /* SIDEBAR */
-.logo{margin:0 0 35px 12px;font-size:23px;font-weight:800;line-height:20px}
-.logo span{display:block}.pink{color:var(--pink)}.green{color:var(--green)}
-.project{margin-bottom:25px;padding:14px 16px;border-radius:16px;background:#fff0f4;color:#c96c8a;font-size:13px;font-weight:800}
-.nav{display:flex;flex-direction:column;gap:5px}
-.nav a{padding:13px 15px;display:flex;gap:14px;border-radius:14px;font-size:14px;font-weight:700;transition:.2s}
-.nav a:hover{background:#fff5f7;color:#d97898}
-.nav .active{background:#ffdce6;color:#b85e7d}
-.icon{width:22px;text-align:center}
-.help{margin-top:35px;padding:20px 15px;border-top:1px solid #eee;color:#999;font-size:13px}
+.logo{
+margin:0 0 35px 12px;
+font-size:23px;
+font-weight:800;
+line-height:20px
+}
+
+.logo span{display:block}
+
+.pink{color:var(--pink)}
+.green{color:var(--green)}
+
+.project{
+margin-bottom:25px;
+padding:14px 16px;
+border-radius:16px;
+background:#fff0f4;
+color:#c96c8a;
+font-size:13px;
+font-weight:800
+}
+
+.nav{
+display:flex;
+flex-direction:column;
+gap:5px
+}
+
+.nav a{
+padding:13px 15px;
+display:flex;
+gap:14px;
+border-radius:14px;
+font-size:14px;
+font-weight:700;
+transition:.2s
+}
+
+.nav a:hover{
+background:#fff5f7;
+color:#d97898
+}
+
+.nav .active{
+background:#ffdce6;
+color:#b85e7d
+}
+
+.icon{
+width:22px;
+text-align:center
+}
 
 /* HERO */
-.hero{position:relative;min-height:260px;padding:48px 52px;overflow:hidden;border-radius:30px;background:linear-gradient(120deg,#ffd4df,#ffb5c9);box-shadow:0 10px 30px #c96c8a12}
-.hero h1{margin:0 0 5px;font-family:Georgia,serif;font-size:68px;font-weight:500}
-.hero h2{margin:0 0 12px;font-family:Georgia,serif;font-size:22px;font-weight:500}
-.hero p{max-width:570px;margin:0;color:#746a70;font-size:14px;line-height:1.7}
-.hero-art{position:absolute;right:55px;top:50%;transform:translateY(-50%);width:155px;height:155px;display:flex;align-items:center;justify-content:center;flex-direction:column;border:7px solid #ffffffc9;border-radius:50%;background:#e8e5c9;color:#8da05f;font-size:21px;font-weight:800;line-height:20px}
-.hero-art span:last-child{color:#746e5d}
-.flower{position:absolute;color:#fff9;font-size:35px}.f1{right:250px;top:25px}.f2{right:20px;bottom:20px}.f3{left:25px;bottom:20px}
+.hero{
+position:relative;
+min-height:260px;
+padding:48px 52px;
+overflow:hidden;
+border-radius:30px;
+background:linear-gradient(120deg,#ffd4df,#ffb5c9);
+box-shadow:0 10px 30px #c96c8a12
+}
 
-/* PRICING */
-.heading{margin:35px 0 20px}
-.heading h2{margin:0 0 4px;font-size:25px}
-.heading p{margin:0;color:var(--muted);font-size:13px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.hero h1{
+margin:0 0 5px;
+font-family:Georgia,serif;
+font-size:68px;
+font-weight:500
+}
 
-.card{padding:27px;border:1px solid #f0e4e7;border-radius:23px;background:#fff;box-shadow:0 7px 25px #46323c0b;transition:.2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 13px 32px #46323c16}
-.card-head{margin-bottom:22px;display:flex;align-items:center;gap:15px}
-.card-icon{width:55px;height:55px;flex:0 0 55px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#ffe9ef;color:#d87596;font-size:24px}
-.card h3{margin:0 0 3px;font-family:Georgia,serif;font-size:21px}
-.card-head p{margin:0;color:var(--muted);font-size:12px}
+.hero h2{
+margin:0 0 12px;
+font-family:Georgia,serif;
+font-size:22px;
+font-weight:500
+}
 
-.green-card .card-icon{background:#eef2df;color:#84965b}
-.purple-card .card-icon{background:#f5eafa;color:#ae75b7}
-.orange-card .card-icon{background:#ffede6;color:#df896d}
+.hero p{
+max-width:570px;
+margin:0;
+color:#746a70;
+font-size:14px;
+line-height:1.7
+}
 
-.row{margin:11px 0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:9px;font-family:Georgia,serif;font-size:14px}
-.dots{border-bottom:2px dotted #ded5d8}
-.cost{white-space:nowrap}
+.hero-art{
+position:absolute;
+right:55px;
+top:50%;
+width:155px;
+height:155px;
+transform:translateY(-50%);
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+border:7px solid #ffffffc9;
+border-radius:50%;
+background:#e8e5c9;
+color:#8da05f;
+font-size:21px;
+font-weight:800;
+line-height:20px
+}
 
-.button{margin-top:20px;padding:11px 20px;display:inline-block;border-radius:22px;background:#ffe2ea;color:#c76787;font-size:12px;font-weight:800}
-.green-card .button{background:#eef2df;color:#78894f}
-.purple-card .button{background:#f5e8f8;color:#a66caf}
-.orange-card .button{background:#ffebe4;color:#d47e65}
+.hero-art span:last-child{
+color:#746e5d
+}
 
-/* CUSTOM */
-.custom{margin-top:23px;padding:25px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:22px;background:#f0f0d9}
-.custom h3{margin:0 0 4px;font-family:Georgia,serif;font-size:20px}
-.custom p{margin:0;color:#8f8b85;font-size:12px}
-.custom a{padding:12px 23px;border-radius:22px;background:var(--green);color:#fff;font-size:12px;font-weight:800;white-space:nowrap}
-.note{text-align:center;margin:17px 0;color:#aaa4a8;font-size:11px}
+.flower{
+position:absolute;
+color:#fff9;
+font-size:35px
+}
+
+.f1{right:250px;top:25px}
+.f2{right:20px;bottom:20px}
+.f3{left:25px;bottom:20px}
+
+/* HEADING */
+.heading{
+margin:35px 0 20px
+}
+
+.heading h2{
+margin:0 0 4px;
+font-size:25px
+}
+
+.heading p{
+margin:0;
+color:var(--muted);
+font-size:13px
+}
+
+/* PRICE GRID */
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px
+}
+
+.card{
+padding:27px;
+border:1px solid #f0e4e7;
+border-radius:23px;
+background:#fff;
+box-shadow:0 7px 25px #46323c0b;
+transition:.2s
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 13px 32px #46323c16
+}
+
+.card-head{
+margin-bottom:22px;
+display:flex;
+align-items:center;
+gap:15px
+}
+
+.card-icon{
+width:55px;
+height:55px;
+flex:0 0 55px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#ffe9ef;
+color:#d87596;
+font-size:24px
+}
+
+.card h3{
+margin:0 0 3px;
+font-family:Georgia,serif;
+font-size:21px
+}
+
+.card-head p{
+margin:0;
+color:var(--muted);
+font-size:12px
+}
+
+.green-card .card-icon{
+background:#eef2df;
+color:#84965b
+}
+
+.purple-card .card-icon{
+background:#f5eafa;
+color:#ae75b7
+}
+
+.orange-card .card-icon{
+background:#ffede6;
+color:#df896d
+}
+
+/* PRICE ROWS */
+.row{
+margin:11px 0;
+display:grid;
+grid-template-columns:auto 1fr auto;
+align-items:center;
+gap:9px;
+font-family:Georgia,serif;
+font-size:14px
+}
+
+.dots{
+border-bottom:2px dotted #ded5d8
+}
+
+.cost{
+white-space:nowrap
+}
+
+/* BUTTONS */
+.button{
+margin-top:20px;
+padding:11px 20px;
+display:inline-flex;
+align-items:center;
+gap:8px;
+border-radius:22px;
+background:#ffe2ea;
+color:#c76787;
+font-size:12px;
+font-weight:800;
+transition:.2s
+}
+
+.button:hover{
+transform:translateX(3px)
+}
+
+.green-card .button{
+background:#eef2df;
+color:#78894f
+}
+
+.purple-card .button{
+background:#f5e8f8;
+color:#a66caf
+}
+
+.orange-card .button{
+background:#ffebe4;
+color:#d47e65
+}
+
+/* CUSTOM QUOTE */
+.custom{
+margin-top:23px;
+padding:27px 30px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+border-radius:22px;
+background:linear-gradient(90deg,#f2f1dd,#e9edca);
+box-shadow:0 7px 24px rgba(70,70,40,.04)
+}
+
+.custom h3{
+margin:0 0 5px;
+font-family:Georgia,serif;
+font-size:21px
+}
+
+.custom p{
+margin:0;
+color:#8f8b85;
+font-size:13px;
+line-height:1.6
+}
+
+.quote-button{
+padding:13px 25px;
+display:inline-flex;
+align-items:center;
+gap:9px;
+flex-shrink:0;
+border-radius:25px;
+background:var(--green);
+color:#fff;
+font-size:13px;
+font-weight:800;
+box-shadow:0 6px 18px rgba(90,100,50,.12);
+transition:.2s
+}
+
+.quote-button:hover{
+transform:translateX(4px);
+background:#9fac62
+}
+
+.note{
+margin:17px 0;
+text-align:center;
+color:#aaa4a8;
+font-size:11px
+}
 
 /* MOBILE */
 @media(max-width:900px){
-.page{display:block}.sidebar{min-height:auto;padding:18px;overflow:auto;border-right:0;border-bottom:1px solid #eee}
-.logo{margin:0 0 15px}.project,.help{display:none}.nav{flex-direction:row;min-width:max-content}
-.nav a{padding:10px}.main{padding:22px}.grid{grid-template-columns:1fr}
+
+.page{display:block}
+
+.sidebar{
+min-height:auto;
+padding:18px;
+overflow:auto;
+border-right:0;
+border-bottom:1px solid #eee
 }
+
+.logo{
+margin:0 0 15px
+}
+
+.project{
+display:none
+}
+
+.nav{
+flex-direction:row;
+min-width:max-content
+}
+
+.nav a{
+padding:10px
+}
+
+.main{
+padding:22px
+}
+
+.grid{
+grid-template-columns:1fr
+}
+
+}
+
 @media(max-width:550px){
-.main{padding:14px}.hero{padding:32px 24px;min-height:330px}.hero h1{font-size:48px}.hero-art{width:100px;height:100px;right:20px;bottom:18px;top:auto;transform:none;font-size:14px;line-height:14px}
-.custom{align-items:flex-start;flex-direction:column}.card{padding:22px}.row{font-size:12px}
+
+.main{
+padding:14px
+}
+
+.hero{
+padding:32px 24px;
+min-height:330px
+}
+
+.hero h1{
+font-size:48px
+}
+
+.hero-art{
+width:100px;
+height:100px;
+right:20px;
+bottom:18px;
+top:auto;
+transform:none;
+font-size:14px;
+line-height:14px
+}
+
+.custom{
+align-items:flex-start;
+flex-direction:column
+}
+
+.card{
+padding:22px
+}
+
+.row{
+font-size:12px
+}
+
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="page">
+
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
@@ -99,31 +468,58 @@ a{text-decoration:none;color:inherit}
 <span class="green">BLOOM</span>
 </a>
 
-<div class="project">▦ &nbsp; AURA ROSA</div>
+<div class="project">
+▦ &nbsp; AURA ROSA
+</div>
 
 <nav class="nav">
-<a href="index.html"><span class="icon">⌂</span>Home</a>
-<a href="index.html#about"><span class="icon">●</span>About</a>
-<a href="contact.html"><span class="icon">♣</span>Contact</a>
-<a href="projects.html"><span class="icon">▣</span>Project Pages</a>
-<a href="prices.html" class="active"><span class="icon">£</span>Prices</a>
-</nav>
 
-<div class="help">? &nbsp; Help</div>
+<a href="index.html">
+<span class="icon">⌂</span>
+Home
+</a>
+
+<a href="about.html">
+<span class="icon">●</span>
+About
+</a>
+
+<a href="contact.html">
+<span class="icon">♣</span>
+Contact
+</a>
+
+<a href="projects.html">
+<span class="icon">▣</span>
+Project Pages
+</a>
+
+<a href="prices.html" class="active">
+<span class="icon">£</span>
+Prices
+</a>
+
+</nav>
 
 </aside>
 
 
 <!-- MAIN -->
 <main class="main">
+
 <div class="content">
+
 
 <!-- HERO -->
 <section class="hero">
 
-<h1>Prices</h1>
+<h1>
+Prices
+</h1>
 
-<h2>3D modeling and environment work</h2>
+<h2>
+3D modeling and environment work
+</h2>
 
 <p>
 High quality assets, detailed environments and custom work
@@ -143,11 +539,19 @@ for games, personal projects and more.
 
 
 <div class="heading">
-<h2>Services &amp; Pricing</h2>
-<p>Prices may vary depending on complexity and project requirements.</p>
+
+<h2>
+Services &amp; Pricing
+</h2>
+
+<p>
+Prices may vary depending on complexity and project requirements.
+</p>
+
 </div>
 
 
+<!-- PRICE CARDS -->
 <section class="grid">
 
 
@@ -156,7 +560,9 @@ for games, personal projects and more.
 
 <div class="card-head">
 
-<div class="card-icon">⌂</div>
+<div class="card-icon">
+⌂
+</div>
 
 <div>
 <h3>Buildings and environments</h3>
@@ -183,7 +589,9 @@ Get in touch →
 
 <div class="card-head">
 
-<div class="card-icon">▲</div>
+<div class="card-icon">
+▲
+</div>
 
 <div>
 <h3>Large scale maps</h3>
@@ -198,19 +606,26 @@ Get in touch →
 <div class="row"><span>Large interior complex</span><span class="dots"></span><span class="cost">£160+</span></div>
 <div class="row"><span>Full custom world</span><span class="dots"></span><span class="cost">£200+</span></div>
 
-<a href="contact.html" class="button">
+<a
+href="https://forms.gle/9vXxWNJnHyBPdSGm9"
+target="_blank"
+rel="noopener noreferrer"
+class="button"
+>
 Get a quote →
 </a>
 
 </article>
 
 
-<!-- ACCESSORIES -->
+<!-- CHARACTER ACCESSORIES -->
 <article class="card purple-card">
 
 <div class="card-head">
 
-<div class="card-icon">✿</div>
+<div class="card-icon">
+✿
+</div>
 
 <div>
 <h3>Character accessories</h3>
@@ -235,12 +650,14 @@ Get in touch →
 </article>
 
 
-<!-- ADD ONS -->
+<!-- EXTRAS -->
 <article class="card orange-card">
 
 <div class="card-head">
 
-<div class="card-icon">✦</div>
+<div class="card-icon">
+✦
+</div>
 
 <div>
 <h3>Extras &amp; Add-ons</h3>
@@ -259,7 +676,7 @@ Get in touch →
 <div class="row"><span>Source files</span><span class="dots"></span><span class="cost">£5.00</span></div>
 
 <a href="contact.html" class="button">
-Add to project →
+Get in touch →
 </a>
 
 </article>
@@ -268,17 +685,29 @@ Add to project →
 </section>
 
 
-<!-- CUSTOM -->
+<!-- CUSTOM PROJECT -->
 <section class="custom">
 
 <div>
-<h3>Have a custom project?</h3>
+
+<h3>
+Have a custom project?
+</h3>
+
 <p>
-Tell me what you're looking for and I'll provide a custom quote.
+Tell me what you're looking for and I'll provide
+a custom quote based on your project.
 </p>
+
 </div>
 
-<a href="contact.html">
+
+<a
+href="https://forms.gle/9vXxWNJnHyBPdSGm9"
+target="_blank"
+rel="noopener noreferrer"
+class="quote-button"
+>
 Get a quote →
 </a>
 
@@ -286,16 +715,19 @@ Get a quote →
 
 
 <p class="note">
-Prices are starting estimates and may vary depending on complexity, revisions and project requirements.
+Prices are starting estimates and may vary depending on complexity,
+revisions and project requirements.
 </p>
 
 
 </div>
+
 </main>
 
 </div>
 
 </body>
+
 </html>
 
 <!-- ===== COMPLETE PRICES.HTML - END ===== -->
